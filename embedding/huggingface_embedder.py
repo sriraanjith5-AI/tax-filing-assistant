@@ -29,6 +29,7 @@ class HuggingFaceEmbedder(BaseEmbedder):
         successful_results=[]
         failed_results=[]
         fallback_batch_count  = 0
+        embed_status = ""
 
         while (start < len(documents)):
             batch_documents = documents[start:end]
@@ -54,34 +55,37 @@ class HuggingFaceEmbedder(BaseEmbedder):
                 for document in batch_documents:
                     try:
                         vector = self.model.encode([document.page_content])[0]
-                        if len(vector) != 0:
-                            successful_results.append(EmbeddingResult(document=document, vector=vector)
-                        )
-                        else:
-                            logger.error(f"Failed to embed document {document.metadata.get('id', '<no id>')} and vector is empty.")
+                        if vector is None or len(vector) == 0:
+                            logger.error(f"Failed to embed document during individual embedding {document.metadata.get('id', '<no id>')} and vector is empty.")
                             failed_results.append(document)
+                        else:
+                            successful_results.append(EmbeddingResult(document=document, vector=vector))
                     except Exception as doc_exc:
                         logger.error(f"Failed to embed document {document.metadata.get('id', '<no id>')}: {doc_exc}")
                         failed_results.append(document)
             else:
                 for document,vector in zip(batch_documents,vectors):
-                    result = EmbeddingResult(
-                        document=document,
-                        vector=vector
-                    )
-                    successful_results.append(result)
+                    if vector is None or len(vector) == 0:
+                        logger.error(f"Failed to embed document during batch document embedding {document.metadata.get('id', '<no id>')} and vector is empty or None.")
+                        failed_results.append(document)
+                    else:
+                        result = EmbeddingResult(
+                            document=document,
+                            vector=vector
+                        )
+                        successful_results.append(result)
             start += self.batch_size
             end += self.batch_size
         logger.info(f"Total failed batches (had to fall back): {fallback_batch_count}")
         logger.info(f"Total documents embedded: {len(successful_results)}, failed to embed: {len(failed_results)}")
         if len(failed_results) == 0 and len(successful_results) > 0:
-            EmbeddingResponse.embed_status="SUCCESS"
+            embed_status="SUCCESS"
         elif len(successful_results) == 0 and len(failed_results) > 0:
-            EmbeddingResponse.embed_status="FAILED"
+            embed_status="FAILED"
         else:
-            EmbeddingResponse.embed_status="PARTIAL_SUCCESS"
+            embed_status="PARTIAL_SUCCESS"
         return EmbeddingResponse(
-                        embed_status=EmbeddingResponse.embed_status,
+                        embed_status=embed_status,
                         total_no_documents=len(documents),
                         successful_documents=successful_results,
                         failed_documents=failed_results
