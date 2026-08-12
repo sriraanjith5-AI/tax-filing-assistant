@@ -75,24 +75,15 @@ class HuggingFaceEmbedder(BaseEmbedder):
         logger.info(f"Total failed batches (had to fall back): {fallback_batch_count}")
         logger.info(f"Total documents embedded: {len(successful_results)}, failed to embed: {len(failed_results)}")
         if len(failed_results) == 0 and len(successful_results) > 0:
-            return EmbeddingResponse(
-                embed_status="SUCCESS",
-                total_no_documents=len(documents),
-                successful_documents=successful_results,
-                failed_documents=failed_results
-            )
+            EmbeddingResponse.embed_status="SUCCESS"
         elif len(successful_results) == 0 and len(failed_results) > 0:
-            return EmbeddingResponse(
-                embed_status="FAILED",
-                total_no_documents=len(documents),
-                successful_documents=successful_results,
-                failed_documents=failed_results
-            )
+            EmbeddingResponse.embed_status="FAILED"
         else:
-            return EmbeddingResponse(
-                embed_status="PARTIAL_SUCCESS",
-                total_no_documents=len(documents),
-                successful_documents=successful_results,
-                failed_documents=failed_results
-            )
+            EmbeddingResponse.embed_status="PARTIAL_SUCCESS"
+        return EmbeddingResponse(
+                        embed_status=EmbeddingResponse.embed_status,
+                        total_no_documents=len(documents),
+                        successful_documents=successful_results,
+                        failed_documents=failed_results
+                    )
 
