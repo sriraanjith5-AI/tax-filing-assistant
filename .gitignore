@@ -1,0 +1,41 @@
+.DS_Store
+**/.DS_Store
+__pycache__/
+**/__pycache__/
+*.pyc
+*.pyo
+.env
+**/.env
+
+# Jupyter checkpoints and scratch notebooks
+.ipynb_checkpoints/
+**/.ipynb_checkpoints/
+**/Untitled*.ipynb
+
+# SQLite runtime databases
+**/*.db
+**/*.db-shm
+**/*.db-wal
+
+# Node.js dependencies and build output
+node_modules/
+**/node_modules/
+dist/
+.vite/
+
+# Data files — download separately, see README
+**/data/*.csv
+
+# Trained model files — generated locally by train_models.py
+**/models/*.model
+**/models/*.bin
+**/models/*.vec
+**/models/*.pkl
+**/models/*.npy
+
+# PyTorch/TF model checkpoints
+**/*.pt
+**/*.pth
+
+# Gensim pre-trained model cache (~2.6 GB total, auto-downloaded to ~/gensim-data/)
+gensim-data/
