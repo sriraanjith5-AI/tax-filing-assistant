@@ -28,7 +28,6 @@ class HuggingFaceEmbedder(BaseEmbedder):
         end = self.batch_size
         successful_results=[]
         failed_results=[]
-        fallback_batch_count  = 0
         embed_status = ""
 
         while (start < len(documents)):
@@ -50,7 +49,6 @@ class HuggingFaceEmbedder(BaseEmbedder):
                 # of failing the whole batch.
                 logger.error(f"Batch embedding failed for range {start} to {end}: {exc}")
                 logger.info("Falling back to per-document embedding for this batch.")
-                fallback_batch_count += 1
 
                 for document in batch_documents:
                     try:
@@ -76,7 +74,6 @@ class HuggingFaceEmbedder(BaseEmbedder):
                         successful_results.append(result)
             start += self.batch_size
             end += self.batch_size
-        logger.info(f"Total failed batches (had to fall back): {fallback_batch_count}")
         logger.info(f"Total documents embedded: {len(successful_results)}, failed to embed: {len(failed_results)}")
         if len(failed_results) == 0 and len(successful_results) > 0:
             embed_status="SUCCESS"
