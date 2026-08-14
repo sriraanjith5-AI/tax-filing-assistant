@@ -4,10 +4,16 @@ from langchain_core.documents import Document
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from config import CHUNK_MIN_SIZE,CHUNK_SIZE,CHUNK_OVERLAP
 from utils.logger import logging
+import hashlib
 
 logger = logging.getLogger(__name__)
 
 class RecursiveChunker(BaseChunker):
+    def generate_chunk_id(self, content: str) -> str:
+        normalized_content=content.strip()
+        return hashlib.sha256(
+            normalized_content.encode("utf-8")
+        ).hexdigest()
 
     def chunk(self,documents:List[Document]) -> List[Document]:
         if len(documents) == 0:
@@ -38,9 +44,9 @@ class RecursiveChunker(BaseChunker):
                     chunk.metadata['source'] = doc.metadata['source']
                     chunk.metadata['chunk_number'] = index + 1
                     chunk.metadata['total_chunks'] = len(chunks_intermediate)
+                    chunk.metadata['chunk_id'] = self.generate_chunk_id(chunk.page_content)
                     chunks.append(chunk)
                     #Log the summary
-
         return chunks
             
 

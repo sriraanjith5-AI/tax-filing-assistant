@@ -18,7 +18,7 @@ from utils.logger import logging
 from embedding.embedding_dataclass import EmbeddingConfig
 logger = logging.getLogger(__name__)
 
-""" logger.info(f"\n PDF_DIR is {PDF_DIR}\n")
+logger.info(f"\n PDF_DIR is {PDF_DIR}\n")
 logger.info(list(PDF_DIR.iterdir()))
 pdf_loader = PDFLoader(PDF_DIR)
 loaded_docs=pdf_loader.load_documents()
@@ -56,16 +56,17 @@ logger.info(f"Length of Final Chunks is {len(final_chunks)}")
 
 for index,chunk in enumerate(final_chunks):
     logger.info(
-        "Chunk %s | length=%s | source=%s | page=%s | total_chunks=%s",
+        "Chunk %s | length=%s | source=%s | page=%s | chunk_number=%s | total_chunks=%s",
         index + 1,
         len(chunk.page_content),
         chunk.metadata.get("source"),
         chunk.metadata.get("page"),
+        chunk.metadata.get("chunk_number"),
         chunk.metadata.get("total_chunks")
     )
 logger.info("Chunking Process Completed")
- """
-documents = [
+
+""" documents = [
     Document(
         page_content="The standard deduction is available to eligible taxpayers.",
         metadata={"id": "doc-1"}
@@ -110,4 +111,4 @@ assert len(response.failed_documents) == 0
 for result in response.successful_documents:
     assert result.document is not None
     assert result.vector is not None
-    assert len(result.vector) == 384
+    assert len(result.vector) == 384 """

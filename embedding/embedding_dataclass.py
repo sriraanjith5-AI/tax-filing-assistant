@@ -12,7 +12,7 @@ class EmbeddingResult:
 class EmbeddingResponse:
     embed_status: str
     total_no_documents: int
-    successful_documents: List[EmbeddingResult]
+    successful_embeddings: List[EmbeddingResult]
     failed_documents: List[Document]
 
 @dataclass
