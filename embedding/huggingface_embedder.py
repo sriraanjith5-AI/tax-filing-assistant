@@ -1,5 +1,5 @@
 from embedding.base_embedder import BaseEmbedder
-from typing import List, Tuple
+from typing import List
 from langchain_core.documents import Document
 from embedding.embedding_dataclass import EmbeddingResult,EmbeddingResponse
 from sentence_transformers import SentenceTransformer
@@ -9,10 +9,13 @@ import logging
 logger = logging.getLogger(__name__)
 
 class HuggingFaceEmbedder(BaseEmbedder):
-    def __init__(self,model_configuration):
+    def __init__(self,model_configuration,model=None):
         self.model_name=model_configuration.model_name
         self.batch_size=model_configuration.batch_size
-        self.model=SentenceTransformer(self.model_name)
+        if model is None:
+            self.model = SentenceTransformer(self.model_name)
+        else:
+            self.model = model        
 
     def embed(self,documents:List[Document]) -> EmbeddingResponse:
         if len(documents) == 0:

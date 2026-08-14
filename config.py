@@ -32,6 +32,7 @@ CHUNK_MIN_SIZE = 200
 # ----------------------------
 
 EMBEDDING_MODEL = "BAAI/bge-small-en-v1.5"
+BATCH_SIZE = 2
 
 
 # ----------------------------
