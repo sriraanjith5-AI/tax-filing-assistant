@@ -9,10 +9,16 @@ import hashlib
 logger = logging.getLogger(__name__)
 
 class RecursiveChunker(BaseChunker):
-    def generate_chunk_id(self, content: str) -> str:
+    def generate_chunk_id(self, source: str, page: int, chunk_number: int,content: str) -> str:
         normalized_content=content.strip()
+        identity = (
+                f"{source}|"
+                f"{page}|"
+                f"{chunk_number}|"
+                f"{normalized_content}"
+                  )
         return hashlib.sha256(
-            normalized_content.encode("utf-8")
+            identity.encode("utf-8")
         ).hexdigest()
 
     def chunk(self,documents:List[Document]) -> List[Document]:
@@ -41,10 +47,21 @@ class RecursiveChunker(BaseChunker):
                             chunks_intermediate.pop()
                 #Add metadata
                 for index,chunk in enumerate(chunks_intermediate):
-                    chunk.metadata['source'] = doc.metadata['source']
-                    chunk.metadata['chunk_number'] = index + 1
+                    source = doc.metadata['source']
+                    page = doc.metadata['page']
+                    chunk_number = index + 1
+
+                    chunk.metadata = {}
+
+                    chunk.metadata['source'] = source
+                    chunk.metadata['page'] = page
+                    chunk.metadata['chunk_number'] = chunk_number
                     chunk.metadata['total_chunks'] = len(chunks_intermediate)
-                    chunk.metadata['chunk_id'] = self.generate_chunk_id(chunk.page_content)
+                    chunk.metadata['chunk_id'] = self.generate_chunk_id(
+                        source,
+                        page,
+                        chunk_number,
+                        chunk.page_content)
                     chunks.append(chunk)
                     #Log the summary
         return chunks

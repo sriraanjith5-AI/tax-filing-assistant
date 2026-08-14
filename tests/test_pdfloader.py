@@ -56,14 +56,16 @@ logger.info(f"Length of Final Chunks is {len(final_chunks)}")
 
 for index,chunk in enumerate(final_chunks):
     logger.info(
-        "Chunk %s | length=%s | source=%s | page=%s | chunk_number=%s | total_chunks=%s",
+        "Chunk %s | length=%s | source=%s | page=%s | chunk_number=%s| chunk_id=%s | total_chunks=%s",
         index + 1,
         len(chunk.page_content),
         chunk.metadata.get("source"),
         chunk.metadata.get("page"),
         chunk.metadata.get("chunk_number"),
+        chunk.metadata.get("chunk_id"),
         chunk.metadata.get("total_chunks")
     )
+
 logger.info("Chunking Process Completed")
 
 """ documents = [
