@@ -41,8 +41,15 @@ class FakeVectorStore(BaseVectorStore):
         )
 
     def _cosine_similarity(self, vector1, vector2) -> float:
-        vector1 = np.array(vector1)
-        vector2 = np.array(vector2)
+
+        vector1 = np.asarray(vector1)
+        vector2 = np.asarray(vector2)
+
+        if vector1.shape != vector2.shape:
+            raise ValueError(
+            f"Vector dimensions do not match: "
+            f"query={vector1.shape}, stored={vector2.shape}"
+            )
 
         denominator = (
             np.linalg.norm(vector1) *
@@ -57,8 +64,11 @@ class FakeVectorStore(BaseVectorStore):
         )
 
     def search(self, query_vector: List[float], top_k:int) -> List[SearchResult]:
-        if top_k <= 0 or query_vector == []:
+        if top_k <= 0:
             return []
+        if query_vector is None or len(query_vector) == 0:
+            return []
+        
         results=[]
 
         for result in self.store.values():

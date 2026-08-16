@@ -23,7 +23,7 @@ class HuggingFaceEmbedder(BaseEmbedder):
             return EmbeddingResponse(
                 embed_status="EMPTY_INPUT",
                 total_no_documents=0,
-                successful_documents=[],
+                successful_embeddings=[],
                 failed_documents=[]
             )
 
@@ -87,7 +87,19 @@ class HuggingFaceEmbedder(BaseEmbedder):
         return EmbeddingResponse(
                         embed_status=embed_status,
                         total_no_documents=len(documents),
-                        successful_documents=successful_results,
+                        successful_embeddings=successful_results,
                         failed_documents=failed_results
                     )
-
+    def embed_query(self,query:str) -> List[float]:
+        if not query:
+            logger.warning("Empty query string provided for embedding.")
+            return []
+        try:
+            vector = self.model.encode(query)
+            if vector is None or len(vector) == 0:
+                logger.error("Failed to embed query and vector is empty or None.")
+                return []
+            return vector
+        except Exception as e:
+            logger.error(f"Failed to embed query: {e}")
+            return []
