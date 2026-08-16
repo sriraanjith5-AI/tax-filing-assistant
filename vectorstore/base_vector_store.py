@@ -2,7 +2,7 @@ from abc import ABC, abstractmethod
 from typing import List
 
 from embedding.embedding_dataclass import EmbeddingResult
-from vectorstore.vectorstore_dataclass import VectorStoreResponse
+from vectorstore.vectorstore_dataclass import VectorStoreResponse,SearchResult
 
 
 class BaseVectorStore(ABC):
@@ -12,5 +12,5 @@ class BaseVectorStore(ABC):
         pass
 
     @abstractmethod
-    def search(self, query: str, top_k: int):
+    def search(self, query_vector: List[float], top_k: int) -> List[SearchResult]:
         pass

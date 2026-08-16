@@ -2,8 +2,8 @@ from typing import List
 
 from embedding.embedding_dataclass import EmbeddingResult
 from vectorstore.base_vector_store import BaseVectorStore
-from vectorstore.vectorstore_dataclass import VectorStoreResponse
-
+from vectorstore.vectorstore_dataclass import VectorStoreResponse,SearchResult
+import numpy as np
 
 class FakeVectorStore(BaseVectorStore):
 
@@ -39,5 +39,47 @@ class FakeVectorStore(BaseVectorStore):
             total_skipped_chunks=skipped_duplicates,
             total_failed_chunks=failed_stores
         )
-    def search(self, query_vector, top_k):
-        raise NotImplementedError("Search is not implemented yet.")
+
+    def _cosine_similarity(self, vector1, vector2) -> float:
+        vector1 = np.array(vector1)
+        vector2 = np.array(vector2)
+
+        denominator = (
+            np.linalg.norm(vector1) *
+            np.linalg.norm(vector2)
+        )
+
+        if denominator == 0:
+            return 0.0
+
+        return float(
+            np.dot(vector1, vector2) / denominator
+        )
+
+    def search(self, query_vector: List[float], top_k:int) -> List[SearchResult]:
+        if top_k <= 0 or query_vector == []:
+            return []
+        results=[]
+
+        for result in self.store.values():
+            score = self._cosine_similarity(
+                query_vector,
+                result.vector
+            )
+            results.append(
+                SearchResult(
+                    document=result.document,
+                    score=score
+                )
+            )
+        results.sort(
+            key=lambda result: result.score,
+            reverse=True
+        )
+        return results[:top_k]
+
+        
+        
+
+        
+
