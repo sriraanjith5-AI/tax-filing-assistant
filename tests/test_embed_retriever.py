@@ -54,6 +54,8 @@ assert results[0].score >= results[1].score
 assert results[0].document is not None
 assert results[0].document.metadata.get("chunk_id") is not None
 
+assert results[0].document.metadata["chunk_id"] == "chunk-002"
+
 #assert len(results) == 2
 #assert results[0].document.metadata["chunk_id"] == "chunk-001"
 #assert results[1].document.metadata["chunk_id"] == "chunk-003"
