@@ -16,6 +16,9 @@ from cleaners.whitespace_cleaner import WhitespaceCleaner
 from chunking.recursive_chunker import RecursiveChunker
 from utils.logger import logging
 from embedding.embedding_dataclass import EmbeddingConfig
+from vectorstore.fake_vector_store import FakeVectorStore
+from retrieval.vector_retriever import VectorRetriever
+
 logger = logging.getLogger(__name__)
 
 logger.info(f"\n PDF_DIR is {PDF_DIR}\n")
@@ -30,8 +33,6 @@ logger.info("testing pdfloader.py is completed")
 print("========== BEFORE ==========")
 print(loaded_docs[0].page_content[:500])
 
-
-#pipeline = CleanerPipeline( cleaners=[ DummyCleaner() ] )
 pipeline = CleanerPipeline( cleaners=[ HeaderCleaner(),
                                        FooterCleaner(),
                                        WhitespaceCleaner() ] 
@@ -39,7 +40,7 @@ pipeline = CleanerPipeline( cleaners=[ HeaderCleaner(),
 
 clean_doc=pipeline.clean(loaded_docs)
 print("Cleaning is completed")  
-#print(logger.info(clean_doc[0].page_content[-100:]))
+
 print("========== AFTER ==========")
 print(loaded_docs[0].page_content[:500])
 
@@ -68,49 +69,45 @@ for index,chunk in enumerate(final_chunks):
 
 logger.info("Chunking Process Completed")
 
-""" documents = [
-    Document(
-        page_content="The standard deduction is available to eligible taxpayers.",
-        metadata={"id": "doc-1"}
-    ),
-    Document(
-        page_content="Employers must withhold federal income tax from employee wages.",
-        metadata={"id": "doc-2"}
-    ),
-    Document(
-        page_content="Form W-4 is used by employees to provide withholding information.",
-        metadata={"id": "doc-3"}
-    )
-]
 embedding_config = EmbeddingConfig()
-
 embedder = HuggingFaceEmbedder(embedding_config)
+embedding_response = embedder.embed(final_chunks)
 
-response = embedder.embed(documents)
+assert embedding_response.embed_status == "SUCCESS"
+assert len(embedding_response.successful_embeddings) == len(final_chunks)
 
-print("Embedding Response:")
-print(f"Embed Status: {response.embed_status}")
-print(f"total_no_documents: {response.total_no_documents}")
-print(f"successful_documents: {len(response.successful_documents)}")
-print(f"failed_documents: {len(response.failed_documents)}")
-print("Details of Successful Documents:")
-print(f"First Successful Document Embedding: {response.successful_documents[0].vector[:10]}")
-print(f"Dimension of successful Documents Embedding: {(response.successful_documents[0].vector.shape)}")
+vector_store=FakeVectorStore()
+store_response = vector_store.add(
+    embedding_response.successful_embeddings
+)
+assert store_response.total_received_chunks == len(final_chunks)
+assert store_response.total_stored_chunks == len(final_chunks)
+assert store_response.total_skipped_chunks == 0
+assert store_response.total_failed_chunks == 0
 
-print("\nDocument → Vector mapping:")
 
-for result in response.successful_documents:
-    print(
-        f"{result.document.metadata['id']} "
-        f"→ vector dimension = {len(result.vector)}"
-    )
+retriever = VectorRetriever(vector_store)
 
-assert response.embed_status == "SUCCESS"
-assert response.total_no_documents == 3
-assert len(response.successful_documents) == 3
-assert len(response.failed_documents) == 0
+query="How is federal income tax withholding calculated?"
+query_vector = embedder.embed_query(query)
 
-for result in response.successful_documents:
+results = retriever.retrieve(
+    query_vector,
+    top_k=2
+)
+
+for result in results:
     assert result.document is not None
-    assert result.vector is not None
-    assert len(result.vector) == 384 """
+    assert result.document.metadata.get("chunk_id") is not None
+    assert result.score is not None
+
+print("\n========== RETRIEVAL RESULTS ==========")
+
+for rank, result in enumerate(results, start=1):
+    print(
+        f"\nRank       : {rank}"
+        f"\nChunk ID   : {result.document.metadata.get('chunk_id')}"
+        f"\nPage       : {result.document.metadata.get('page')}"
+        f"\nScore      : {result.score:.4f}"
+        f"\nContent    : {result.document.page_content[:300]}"
+    )
