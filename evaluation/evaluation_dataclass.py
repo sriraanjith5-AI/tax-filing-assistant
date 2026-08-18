@@ -1,4 +1,5 @@
-from dataclasses import dataclass
+from dataclasses import dataclass, field
+from typing import List
 
 @dataclass
 class EvaluationResult:
@@ -15,3 +16,10 @@ class EvaluationResult:
     answer_score: float
 
     evaluation_status: str
+
+    # --- Accuracy metrics (relevance against the golden dataset) ---
+    page_hit: bool = False
+    matched_keywords: List[str] = field(default_factory=list)
+    missing_keywords: List[str] = field(default_factory=list)
+    keyword_coverage: float = 0.0
+    accuracy_status: str = "NOT_EVALUATED"

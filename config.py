@@ -16,6 +16,8 @@ EXCEL_DIR = DATA_DIR / "excel"
 
 VECTOR_DB_DIR = BASE_DIR / "vectorstore"
 
+EVAL_DIR = BASE_DIR / "evaluation"
+
 
 # ----------------------------
 # Chunking

@@ -8,6 +8,13 @@ import logging
 
 logger = logging.getLogger(__name__)
 
+# BAAI/bge-* models are asymmetric: they were trained to prepend this
+# instruction to the *query* only (never to the passages/documents being
+# indexed). Skipping it measurably hurts retrieval ranking quality.
+# https://huggingface.co/BAAI/bge-small-en-v1.5#usage
+BGE_QUERY_INSTRUCTION = "Represent this sentence for searching relevant passages: "
+
+
 class HuggingFaceEmbedder(BaseEmbedder):
     def __init__(self,model_configuration,model=None):
         self.model_name=model_configuration.model_name
@@ -95,7 +102,10 @@ class HuggingFaceEmbedder(BaseEmbedder):
             logger.warning("Empty query string provided for embedding.")
             return []
         try:
-            vector = self.model.encode(query)
+            prefixed_query = query
+            if "bge" in self.model_name.lower():
+                prefixed_query = BGE_QUERY_INSTRUCTION + query
+            vector = self.model.encode(prefixed_query)
             if vector is None or len(vector) == 0:
                 logger.error("Failed to embed query and vector is empty or None.")
                 return []
