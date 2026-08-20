@@ -1,0 +1,31 @@
+question_id,user_input,retrieved_count,recall_at_1,recall_at_3,recall_at_5,recall_at_10,mrr,ndcg_at_10
+gd_001,What is IRS Publication 15-T used for?,3,0.0,0.0,0.0,0.0,0.0,0.0
+gd_002,What changed in the 2026 federal income tax withholding tables?,9,0.0,1.0,1.0,1.0,0.5,0.6309297535714575
+gd_003,What are the main withholding methods covered by Publication 15-T?,7,0.0,0.0,0.0,0.0,0.0,0.0
+gd_004,What information does an employee provide on Form W-4 from 2020 or later?,10,0.0,0.0,0.0,0.0,0.0,0.0
+gd_005,What are the five steps on Form W-4?,10,1.0,1.0,1.0,1.0,1.0,1.0
+gd_006,What happens when an employee checks the Step 2 checkbox on Form W-4?,10,1.0,1.0,1.0,1.0,1.0,1.0
+gd_007,How does Step 3 of Form W-4 affect federal income tax withholding?,10,0.0,0.0,1.0,1.0,0.25,0.48247555939075504
+gd_008,"What do Steps 4(a), 4(b), and 4(c) do on Form W-4?",10,1.0,1.0,1.0,1.0,1.0,1.0
+gd_009,What happens if a new employee does not furnish Form W-4?,10,1.0,1.0,1.0,1.0,1.0,1.0
+gd_010,When can an employee claim exemption from federal income tax withholding?,9,1.0,1.0,1.0,1.0,1.0,1.0
+gd_011,What is the difference between the Percentage Method and Wage Bracket Method?,10,0.0,0.0,0.0,0.0,0.0,0.0
+gd_012,When should the Percentage Method tables be used instead of the Wage Bracket Method tables?,10,1.0,1.0,1.0,1.0,1.0,1.0
+gd_013,What is the special withholding adjustment for nonresident alien employees?,10,0.0,0.0,0.0,0.0,0.0,0.0
+gd_014,Are nonresident alien students from India subject to the special withholding adjustment procedure?,1,1.0,1.0,1.0,1.0,1.0,1.0
+gd_015,How much additional income is added for a weekly payroll period under Table 1 for a nonresident alien employee who was first paid before 2020 and has not submitted a 2020 or later Form W-4?,6,0.0,0.0,0.0,0.0,0.0,0.0
+gd_016,How much additional income is added for a weekly payroll period under Table 2?,6,0.0,0.0,0.0,0.0,0.0,0.0
+gd_017,How much additional income is added under Table 2 for a monthly payroll period?,5,0.0,0.0,0.0,0.0,0.0,0.0
+gd_018,Are the additional amounts from Tables 1 and 2 reported on Form W-2?,7,0.0,0.0,0.0,0.0,0.0,0.0
+gd_019,Do the amounts added from Tables 1 and 2 affect Social Security or Medicare taxes?,2,1.0,1.0,1.0,1.0,1.0,1.0
+gd_020,A nonresident alien employee earns $300 in weekly wages and has a qualifying 2019 Form W-4. What amount of wages is used for calculating federal income tax withholding under the example in Publication 15-T?,9,0.0,0.0,0.0,0.0,0.0,0.0
+gd_021,"In the $300 weekly wage example for a nonresident alien employee, how much federal income tax is withheld?",10,1.0,1.0,1.0,1.0,1.0,1.0
+gd_022,Does the special nonresident alien withholding adjustment apply to supplemental wage payments?,9,1.0,1.0,1.0,1.0,1.0,1.0
+gd_023,What is Form W-4P used for?,10,1.0,1.0,1.0,1.0,1.0,1.0
+gd_024,What happens when a payee checks No withholding on a 2026 or later Form W-4P?,10,1.0,1.0,1.0,1.0,1.0,1.0
+gd_025,What alternative methods can be used for figuring federal income tax withholding?,10,0.0,0.0,0.0,0.0,0.0,0.0
+gd_026,How does the cumulative wages method work?,3,1.0,1.0,1.0,1.0,1.0,1.0
+gd_027,What is the IRS Tax Withholding Estimator used for according to Publication 15-T?,8,0.0,0.0,0.0,0.0,0.0,0.0
+gd_028,What is the purpose of the 2019 and earlier Form W-4 computational bridge?,10,1.0,1.0,1.0,1.0,1.0,1.0
+gd_029,What special rule applies when converting a nonresident alien employee's 2019 or earlier Form W-4 using the computational bridge?,10,0.0,1.0,1.0,1.0,0.5,0.6309297535714575
+gd_030,What must an electronic Form W-4 system provide for nonresident alien status?,10,1.0,1.0,1.0,1.0,1.0,1.0

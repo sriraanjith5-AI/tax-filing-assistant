@@ -1,0 +1,651 @@
+{
+  "dataset_name": "IRS Publication 15-T 2026 Golden Dataset",
+  "version": "1.0",
+  "source_document": "IRS Publication 15-T (2026)",
+  "evaluation_purpose": "Evaluate retrieval relevance and answer correctness for the tax-filing assistant MVP",
+  "entries": [
+    {
+      "id": "gd_001",
+      "query": "What is IRS Publication 15-T used for?",
+      "expected_answer": "IRS Publication 15-T provides federal income tax withholding methods for use in 2026. It includes withholding tables and methods for figuring federal income tax withholding.",
+      "source_section": "Introduction",
+      "source_page": 1,
+      "evaluation": {
+        "type": "factual",
+        "retrieval_required": true,
+        "answer_must_contain": [
+          "federal income tax withholding",
+          "2026"
+        ]
+      },
+      "retrieval_ground_truth": {
+        "source_page": 1,
+        "source_section": "Introduction",
+        "evidence": "Publication 15-T provides federal income tax withholding methods for use in 2026."
+      }
+    },
+    {
+      "id": "gd_002",
+      "query": "What changed in the 2026 federal income tax withholding tables?",
+      "expected_answer": "The 2026 federal income tax withholding tables were updated for changes made by P.L. 119-21, including the permanent extension of individual tax rates, the permanent extension of the increased standard deduction, and the permanent termination of personal exemptions.",
+      "source_section": "What's New",
+      "source_page": 1,
+      "evaluation": {
+        "type": "factual",
+        "retrieval_required": true,
+        "answer_must_contain": [
+          "P.L. 119-21",
+          "increased standard deduction",
+          "termination of personal exemptions"
+        ]
+      },
+      "retrieval_ground_truth": {
+        "source_page": 1,
+        "source_section": "What's New",
+        "evidence": "The 2026 federal income tax withholding tables were updated for changes made by P.L. 119-21, including the permanent extension of individual tax rates, the permanent extension of the increased standard deduction, and the permanent termination of personal exemptions."
+      }
+    },
+    {
+      "id": "gd_003",
+      "query": "What are the main withholding methods covered by Publication 15-T?",
+      "expected_answer": "Publication 15-T covers the Percentage Method and Wage Bracket Method, including versions for automated payroll systems and manual payroll systems. It also includes alternative methods for figuring withholding.",
+      "source_section": "Contents",
+      "source_page": 1,
+      "evaluation": {
+        "type": "list",
+        "retrieval_required": true,
+        "answer_must_contain": [
+          "Percentage Method",
+          "Wage Bracket Method",
+          "Alternative Methods"
+        ]
+      },
+      "retrieval_ground_truth": {
+        "source_page": 1,
+        "source_section": "Contents",
+        "evidence": "Publication 15-T covers the Percentage Method and Wage Bracket Method, including versions for automated payroll systems and manual payroll systems. It also includes alternative methods for figuring withholding."
+      }
+    },
+    {
+      "id": "gd_004",
+      "query": "What information does an employee provide on Form W-4 from 2020 or later?",
+      "expected_answer": "Beginning with the 2020 Form W-4, employees no longer request withholding adjustments using withholding allowances. Instead, they provide amounts to increase or decrease the amount of taxes withheld and amounts to increase or decrease the amount of wage income subject to income tax withholding.",
+      "source_section": "Form W-4",
+      "source_page": 4,
+      "evaluation": {
+        "type": "conceptual",
+        "retrieval_required": true,
+        "answer_must_contain": [
+          "no longer",
+          "withholding allowances",
+          "increase or decrease",
+          "taxes withheld"
+        ]
+      },
+      "retrieval_ground_truth": {
+        "source_page": 4,
+        "source_section": "Form W-4",
+        "evidence": "Beginning with the 2020 Form W-4, employees no longer request withholding adjustments using withholding allowances. Instead, they provide amounts to increase or decrease the amount of taxes withheld and amounts to increase or decrease the amount of wage income subject to income tax withholding."
+      }
+    },
+    {
+      "id": "gd_005",
+      "query": "What are the five steps on Form W-4?",
+      "expected_answer": "Form W-4 contains five steps. Every Form W-4 received from an employee in 2020 or later should show a completed Step 1 and a dated signature in Step 5. Employees complete Steps 2, 3, and/or 4 when relevant to their personal situations.",
+      "source_section": "Form W-4",
+      "source_page": 4,
+      "evaluation": {
+        "type": "procedural",
+        "retrieval_required": true,
+        "answer_must_contain": [
+          "five steps",
+          "Step 1",
+          "Step 5",
+          "Steps 2, 3, and/or 4"
+        ]
+      },
+      "retrieval_ground_truth": {
+        "source_page": 4,
+        "source_section": "Form W-4",
+        "evidence": "Form W-4 contains five steps. Every Form W-4 received from an employee in 2020 or later should show a completed Step 1 and a dated signature in Step 5. Employees complete Steps 2, 3, and/or 4 when relevant to their personal situations."
+      }
+    },
+    {
+      "id": "gd_006",
+      "query": "What happens when an employee checks the Step 2 checkbox on Form W-4?",
+      "expected_answer": "If the employee checks the Step 2 checkbox, the employer figures withholding using the Form W-4 Step 2 Checkbox column in the Percentage Method or Wage Bracket Method tables. This results in higher withholding for the employee.",
+      "source_section": "Form W-4 Step 2",
+      "source_page": 4,
+      "evaluation": {
+        "type": "conceptual",
+        "retrieval_required": true,
+        "answer_must_contain": [
+          "Step 2",
+          "higher withholding",
+          "Percentage Method",
+          "Wage Bracket Method"
+        ]
+      },
+      "retrieval_ground_truth": {
+        "source_page": 4,
+        "source_section": "Form W-4 Step 2",
+        "evidence": "If the employee checks the Step 2 checkbox, the employer figures withholding using the Form W-4 Step 2 Checkbox column in the Percentage Method or Wage Bracket Method tables. This results in higher withholding for the employee."
+      }
+    },
+    {
+      "id": "gd_007",
+      "query": "How does Step 3 of Form W-4 affect federal income tax withholding?",
+      "expected_answer": "The employer uses the amount entered in Step 3 as an annual reduction in the amount of withholding. The employer should use the total entered in Step 3 even if it is not equal to the sum of the individual amounts entered there.",
+      "source_section": "Form W-4 Step 3",
+      "source_page": 4,
+      "evaluation": {
+        "type": "conceptual",
+        "retrieval_required": true,
+        "answer_must_contain": [
+          "annual reduction",
+          "amount of withholding",
+          "Step 3 total"
+        ]
+      },
+      "retrieval_ground_truth": {
+        "source_page": 4,
+        "source_section": "Form W-4 Step 3",
+        "evidence": "The employer uses the amount entered in Step 3 as an annual reduction in the amount of withholding. The employer should use the total entered in Step 3 even if it is not equal to the sum of the individual amounts entered there."
+      }
+    },
+    {
+      "id": "gd_008",
+      "query": "What do Steps 4(a), 4(b), and 4(c) do on Form W-4?",
+      "expected_answer": "Step 4(a) increases the annual amount of wages subject to income tax withholding. Step 4(b) reduces the annual amount of wages subject to income tax withholding. Step 4(c) increases withholding by the per-pay-period tax amount entered by the employee.",
+      "source_section": "Form W-4 Steps 4(a), 4(b), and 4(c)",
+      "source_page": 4,
+      "evaluation": {
+        "type": "multi_part",
+        "retrieval_required": true,
+        "answer_must_contain": [
+          "Step 4(a)",
+          "Step 4(b)",
+          "Step 4(c)",
+          "increases",
+          "reduces"
+        ]
+      },
+      "retrieval_ground_truth": {
+        "source_page": 4,
+        "source_section": "Form W-4 Steps 4(a), 4(b), and 4(c)",
+        "evidence": "Step 4(a) increases the annual amount of wages subject to income tax withholding. Step 4(b) reduces the annual amount of wages subject to income tax withholding. Step 4(c) increases withholding by the per-pay-period tax amount entered by the employee."
+      }
+    },
+    {
+      "id": "gd_009",
+      "query": "What happens if a new employee does not furnish Form W-4?",
+      "expected_answer": "A new employee who fails to furnish Form W-4 is treated as if they checked Single or Married filing separately in Step 1(c) and made no entries in Steps 2, 3, or 4. An employee who was paid wages before 2020 and failed to furnish Form W-4 continues to be treated as Single and claiming zero allowances on a 2019 or earlier Form W-4.",
+      "source_section": "New employee fails to furnish Form W-4",
+      "source_page": 4,
+      "evaluation": {
+        "type": "exception",
+        "retrieval_required": true,
+        "answer_must_contain": [
+          "Single or Married filing separately",
+          "no entries in Step 2, Step 3, or Step 4"
+        ]
+      },
+      "retrieval_ground_truth": {
+        "source_page": 4,
+        "source_section": "New employee fails to furnish Form W-4",
+        "evidence": "A new employee who fails to furnish Form W-4 is treated as if they checked Single or Married filing separately in Step 1(c) and made no entries in Steps 2, 3, or 4."
+      }
+    },
+    {
+      "id": "gd_010",
+      "query": "When can an employee claim exemption from federal income tax withholding?",
+      "expected_answer": "An employee who checks the exemption box below Step 4(c) will generally have no federal income tax withheld from their paychecks, except in the case of certain supplemental wages. Generally, an employee may claim exemption because they had no federal income tax liability last year and expect none this year.",
+      "source_section": "Exemption from withholding",
+      "source_page": 4,
+      "evaluation": {
+        "type": "exception",
+        "retrieval_required": true,
+        "answer_must_contain": [
+          "no federal income tax withheld",
+          "no federal income tax liability last year",
+          "expect none this year"
+        ]
+      },
+      "retrieval_ground_truth": {
+        "source_page": 4,
+        "source_section": "Exemption from withholding",
+        "evidence": "An employee who checks the exemption box below Step 4(c) will generally have no federal income tax withheld from their paychecks, except in the case of certain supplemental wages. Generally, an employee may claim exemption because they had no federal income tax liability last year and expect none this year."
+      }
+    },
+    {
+      "id": "gd_011",
+      "query": "What is the difference between the Percentage Method and Wage Bracket Method?",
+      "expected_answer": "Publication 15-T provides both Percentage Method and Wage Bracket Method tables. The Wage Bracket Method is used for manual payroll systems and has tables organized by wage ranges, filing status, payroll period, and withholding choices. The publication also provides Percentage Method tables for automated and manual payroll systems.",
+      "source_section": "Withholding Methods",
+      "source_page": 1,
+      "evaluation": {
+        "type": "comparison",
+        "retrieval_required": true,
+        "answer_must_contain": [
+          "Percentage Method",
+          "Wage Bracket Method",
+          "manual payroll",
+          "automated payroll"
+        ]
+      },
+      "retrieval_ground_truth": {
+        "source_page": 1,
+        "source_section": "Withholding Methods",
+        "evidence": "The Wage Bracket Method is used for manual payroll systems and has tables organized by wage ranges, filing status, payroll period, and withholding choices. The publication also provides Percentage Method tables for automated and manual payroll systems."
+      }
+    },
+    {
+      "id": "gd_012",
+      "query": "When should the Percentage Method tables be used instead of the Wage Bracket Method tables?",
+      "expected_answer": "For 2019 or earlier Forms W-4, if the Wage Bracket Method cannot be used because taxable wages exceed the amount from the last bracket or the employee claimed more than 10 allowances, the Percentage Method tables should be used.",
+      "source_section": "Wage Bracket Method",
+      "source_page": 28,
+      "evaluation": {
+        "type": "conditional",
+        "retrieval_required": true,
+        "answer_must_contain": [
+          "taxable wages exceed",
+          "last bracket",
+          "more than 10 allowances",
+          "Percentage Method"
+        ]
+      },
+      "retrieval_ground_truth": {
+        "source_page": 28,
+        "source_section": "Wage Bracket Method",
+        "evidence": "For 2019 or earlier Forms W-4, if the Wage Bracket Method cannot be used because taxable wages exceed the amount from the last bracket or the employee claimed more than 10 allowances, the Percentage Method tables should be used."
+      }
+    },
+    {
+      "id": "gd_013",
+      "query": "What is the special withholding adjustment for nonresident alien employees?",
+      "expected_answer": "Employers must use the special procedure in Publication 15-T to figure federal income tax withholding for nonresident alien employees performing services within the United States when their wages are subject to income tax withholding. The procedure determines whether Table 1 or Table 2 applies and adds the applicable amount to wages solely for calculating federal income tax withholding.",
+      "source_section": "Withholding Adjustment for Nonresident Alien Employees",
+      "source_page": 7,
+      "evaluation": {
+        "type": "procedural",
+        "retrieval_required": true,
+        "answer_must_contain": [
+          "nonresident alien employees",
+          "United States",
+          "Table 1",
+          "Table 2",
+          "solely for calculating"
+        ]
+      },
+      "retrieval_ground_truth": {
+        "source_page": 7,
+        "source_section": "Withholding Adjustment for Nonresident Alien Employees",
+        "evidence": "Employers must use the special procedure in Publication 15-T to figure federal income tax withholding for nonresident alien employees performing services within the United States when their wages are subject to income tax withholding. The procedure determines whether Table 1 or Table 2 applies and adds the applicable amount to wages solely for calculating federal income tax withholding."
+      }
+    },
+    {
+      "id": "gd_014",
+      "query": "Are nonresident alien students from India subject to the special withholding adjustment procedure?",
+      "expected_answer": "No. Nonresident alien students from India and business apprentices from India are not subject to the special withholding adjustment procedure described for nonresident alien employees.",
+      "source_section": "Withholding Adjustment for Nonresident Alien Employees",
+      "source_page": 7,
+      "evaluation": {
+        "type": "exception",
+        "retrieval_required": true,
+        "answer_must_contain": [
+          "students from India",
+          "business apprentices from India",
+          "aren't subject"
+        ]
+      },
+      "retrieval_ground_truth": {
+        "source_page": 7,
+        "source_section": "Withholding Adjustment for Nonresident Alien Employees",
+        "evidence": "Nonresident alien students from India and business apprentices from India are not subject to the special withholding adjustment procedure described for nonresident alien employees."
+      }
+    },
+    {
+      "id": "gd_015",
+      "query": "How much additional income is added for a weekly payroll period under Table 1 for a nonresident alien employee who was first paid before 2020 and has not submitted a 2020 or later Form W-4?",
+      "expected_answer": "For a weekly payroll period, $226.90 is added to wages under Table 1.",
+      "source_section": "Withholding Adjustment for Nonresident Alien Employees - Table 1",
+      "source_page": 7,
+      "evaluation": {
+        "type": "numeric",
+        "retrieval_required": true,
+        "answer_must_contain": [
+          "$226.90",
+          "weekly",
+          "Table 1"
+        ]
+      },
+      "retrieval_ground_truth": {
+        "source_page": 7,
+        "source_section": "Withholding Adjustment for Nonresident Alien Employees - Table 1",
+        "evidence": "For a weekly payroll period, $226.90 is added to wages under Table 1."
+      }
+    },
+    {
+      "id": "gd_016",
+      "query": "How much additional income is added for a weekly payroll period under Table 2?",
+      "expected_answer": "For a weekly payroll period, $309.60 is added to wages under Table 2.",
+      "source_section": "Withholding Adjustment for Nonresident Alien Employees - Table 2",
+      "source_page": 7,
+      "evaluation": {
+        "type": "numeric",
+        "retrieval_required": true,
+        "answer_must_contain": [
+          "$309.60",
+          "weekly",
+          "Table 2"
+        ]
+      },
+      "retrieval_ground_truth": {
+        "source_page": 7,
+        "source_section": "Withholding Adjustment for Nonresident Alien Employees - Table 2",
+        "evidence": "For a weekly payroll period, $309.60 is added to wages under Table 2."
+      }
+    },
+    {
+      "id": "gd_017",
+      "query": "How much additional income is added under Table 2 for a monthly payroll period?",
+      "expected_answer": "For a monthly payroll period, $1,341.70 is added to wages under Table 2.",
+      "source_section": "Withholding Adjustment for Nonresident Alien Employees - Table 2",
+      "source_page": 7,
+      "evaluation": {
+        "type": "numeric",
+        "retrieval_required": true,
+        "answer_must_contain": [
+          "$1,341.70",
+          "monthly",
+          "Table 2"
+        ]
+      },
+      "retrieval_ground_truth": {
+        "source_page": 7,
+        "source_section": "Withholding Adjustment for Nonresident Alien Employees - Table 2",
+        "evidence": "For a monthly payroll period, $1,341.70 is added to wages under Table 2."
+      }
+    },
+    {
+      "id": "gd_018",
+      "query": "Are the additional amounts from Tables 1 and 2 reported on Form W-2?",
+      "expected_answer": "No. The amounts added from Tables 1 and 2 are used solely for calculating federal income tax withholding. They should not be included in any box on Form W-2 and do not increase the employee's income tax liability.",
+      "source_section": "Withholding Adjustment for Nonresident Alien Employees",
+      "source_page": 7,
+      "evaluation": {
+        "type": "exception",
+        "retrieval_required": true,
+        "answer_must_contain": [
+          "not be included",
+          "Form W-2",
+          "do not increase",
+          "income tax liability"
+        ]
+      },
+      "retrieval_ground_truth": {
+        "source_page": 7,
+        "source_section": "Withholding Adjustment for Nonresident Alien Employees",
+        "evidence": "The amounts added from Tables 1 and 2 are used solely for calculating federal income tax withholding. They should not be included in any box on Form W-2 and do not increase the employee's income tax liability."
+      }
+    },
+    {
+      "id": "gd_019",
+      "query": "Do the amounts added from Tables 1 and 2 affect Social Security or Medicare taxes?",
+      "expected_answer": "No. The amounts added from Tables 1 and 2 for the nonresident alien withholding adjustment do not increase the Social Security tax or Medicare tax liability of either the employer or employee. They also do not increase FUTA tax liability of the employer.",
+      "source_section": "Withholding Adjustment for Nonresident Alien Employees",
+      "source_page": 7,
+      "evaluation": {
+        "type": "exception",
+        "retrieval_required": true,
+        "answer_must_contain": [
+          "Social Security",
+          "Medicare",
+          "do not increase",
+          "FUTA"
+        ]
+      },
+      "retrieval_ground_truth": {
+        "source_page": 7,
+        "source_section": "Withholding Adjustment for Nonresident Alien Employees",
+        "evidence": "The amounts added from Tables 1 and 2 for the nonresident alien withholding adjustment do not increase the Social Security tax or Medicare tax liability of either the employer or employee. They also do not increase FUTA tax liability of the employer."
+      }
+    },
+    {
+      "id": "gd_020",
+      "query": "A nonresident alien employee earns $300 in weekly wages and has a qualifying 2019 Form W-4. What amount of wages is used for calculating federal income tax withholding under the example in Publication 15-T?",
+      "expected_answer": "The employer adds $226.90 from Table 1 to the $300 of weekly wages, resulting in $526.90 of wages used for calculating federal income tax withholding.",
+      "source_section": "Withholding Adjustment Example",
+      "source_page": 7,
+      "evaluation": {
+        "type": "calculation",
+        "retrieval_required": true,
+        "answer_must_contain": [
+          "$300",
+          "$226.90",
+          "$526.90"
+        ]
+      },
+      "retrieval_ground_truth": {
+        "source_page": 7,
+        "source_section": "Withholding Adjustment Example",
+        "evidence": "The employer adds $226.90 from Table 1 to the $300 of weekly wages, resulting in $526.90 of wages used for calculating federal income tax withholding."
+      }
+    },
+    {
+      "id": "gd_021",
+      "query": "In the $300 weekly wage example for a nonresident alien employee, how much federal income tax is withheld?",
+      "expected_answer": "In the example, the employer uses the Wage Bracket Method and withholds $31 in federal income tax from the employee's weekly wages.",
+      "source_section": "Withholding Adjustment Example",
+      "source_page": 7,
+      "evaluation": {
+        "type": "calculation",
+        "retrieval_required": true,
+        "answer_must_contain": [
+          "$31",
+          "Wage Bracket Method"
+        ]
+      },
+      "retrieval_ground_truth": {
+        "source_page": 7,
+        "source_section": "Withholding Adjustment Example",
+        "evidence": "In the example, the employer uses the Wage Bracket Method and withholds $31 in federal income tax from the employee's weekly wages."
+      }
+    },
+    {
+      "id": "gd_022",
+      "query": "Does the special nonresident alien withholding adjustment apply to supplemental wage payments?",
+      "expected_answer": "The special procedure does not apply to a supplemental wage payment when the 37% mandatory flat rate withholding applies or when the 22% optional flat rate withholding is being used to figure income tax withholding on the supplemental wage payment.",
+      "source_section": "Withholding Adjustment for Nonresident Alien Employees",
+      "source_page": 7,
+      "evaluation": {
+        "type": "exception",
+        "retrieval_required": true,
+        "answer_must_contain": [
+          "supplemental wage payment",
+          "37%",
+          "22%",
+          "doesn't apply"
+        ]
+      },
+      "retrieval_ground_truth": {
+        "source_page": 7,
+        "source_section": "Withholding Adjustment for Nonresident Alien Employees",
+        "evidence": "The special procedure does not apply to a supplemental wage payment when the 37% mandatory flat rate withholding applies or when the 22% optional flat rate withholding is being used to figure income tax withholding on the supplemental wage payment."
+      }
+    },
+    {
+      "id": "gd_023",
+      "query": "What is Form W-4P used for?",
+      "expected_answer": "Payees use Form W-4P to have payers withhold the correct amount of federal income tax from periodic pension, annuity, profit-sharing and stock bonus plan, or IRA payments.",
+      "source_section": "Form W-4P",
+      "source_page": 8,
+      "evaluation": {
+        "type": "factual",
+        "retrieval_required": true,
+        "answer_must_contain": [
+          "Form W-4P",
+          "pension",
+          "annuity",
+          "IRA payments"
+        ]
+      },
+      "retrieval_ground_truth": {
+        "source_page": 8,
+        "source_section": "Form W-4P",
+        "evidence": "Payees use Form W-4P to have payers withhold the correct amount of federal income tax from periodic pension, annuity, profit-sharing and stock bonus plan, or IRA payments."
+      }
+    },
+    {
+      "id": "gd_024",
+      "query": "What happens when a payee checks No withholding on a 2026 or later Form W-4P?",
+      "expected_answer": "A payee who checks the No withholding box on a 2026 or later Form W-4P below Step 4(c) will have no federal income tax withheld from periodic pension or annuity payments.",
+      "source_section": "Form W-4P",
+      "source_page": 8,
+      "evaluation": {
+        "type": "factual",
+        "retrieval_required": true,
+        "answer_must_contain": [
+          "No withholding",
+          "2026 or later",
+          "no federal income tax withheld"
+        ]
+      },
+      "retrieval_ground_truth": {
+        "source_page": 8,
+        "source_section": "Form W-4P",
+        "evidence": "A payee who checks the No withholding box on a 2026 or later Form W-4P below Step 4(c) will have no federal income tax withheld from periodic pension or annuity payments."
+      }
+    },
+    {
+      "id": "gd_025",
+      "query": "What alternative methods can be used for figuring federal income tax withholding?",
+      "expected_answer": "Publication 15-T describes alternative methods including annualized wages, average estimated wages, and cumulative wages. These methods may be used instead of the Percentage Method and Wage Bracket Method.",
+      "source_section": "Alternative Methods for Figuring Withholding",
+      "source_page": 66,
+      "evaluation": {
+        "type": "list",
+        "retrieval_required": true,
+        "answer_must_contain": [
+          "annualized wages",
+          "average estimated wages",
+          "cumulative wages",
+          "Percentage Method",
+          "Wage Bracket Method"
+        ]
+      },
+      "retrieval_ground_truth": {
+        "source_page": 66,
+        "source_section": "Alternative Methods for Figuring Withholding",
+        "evidence": "Publication 15-T describes alternative methods including annualized wages, average estimated wages, and cumulative wages. These methods may be used instead of the Percentage Method and Wage Bracket Method."
+      }
+    },
+    {
+      "id": "gd_026",
+      "query": "How does the cumulative wages method work?",
+      "expected_answer": "For cumulative wages, the employer adds the wages paid to the employee during the current calendar year to the current payroll period amount, divides the total by the number of payroll periods so far in the year including the current period, calculates withholding on that average amount, and multiplies the withholding by the number of payroll periods so far including the current period.",
+      "source_section": "Alternative Methods - Cumulative Wages",
+      "source_page": 66,
+      "evaluation": {
+        "type": "procedural",
+        "retrieval_required": true,
+        "answer_must_contain": [
+          "current calendar year",
+          "current payroll period",
+          "number of payroll periods",
+          "multiplies the withholding"
+        ]
+      },
+      "retrieval_ground_truth": {
+        "source_page": 66,
+        "source_section": "Alternative Methods - Cumulative Wages",
+        "evidence": "For cumulative wages, the employer adds the wages paid to the employee during the current calendar year to the current payroll period amount, divides the total by the number of payroll periods so far in the year including the current period, calculates withholding on that average amount, and multiplies the withholding by the number of payroll periods so far including the current period."
+      }
+    },
+    {
+      "id": "gd_027",
+      "query": "What is the IRS Tax Withholding Estimator used for according to Publication 15-T?",
+      "expected_answer": "Publication 15-T recommends the IRS Tax Withholding Estimator when completing Form W-4 or Form W-4P in situations where more accurate withholding may be useful, such as multiple jobs, part-year work, or other income and tax situations.",
+      "source_section": "Form W-4 / Form W-4P",
+      "source_page": 4,
+      "evaluation": {
+        "type": "factual",
+        "retrieval_required": true,
+        "answer_must_contain": [
+          "IRS Tax Withholding Estimator",
+          "Form W-4"
+        ]
+      },
+      "retrieval_ground_truth": {
+        "source_page": 4,
+        "source_section": "Form W-4 / Form W-4P",
+        "evidence": "Publication 15-T recommends the IRS Tax Withholding Estimator when completing Form W-4 or Form W-4P in situations where more accurate withholding may be useful, such as multiple jobs, part-year work, or other income and tax situations."
+      }
+    },
+    {
+      "id": "gd_028",
+      "query": "What is the purpose of the 2019 and earlier Form W-4 computational bridge?",
+      "expected_answer": "The computational bridge allows employers to treat 2019 and earlier Forms W-4 as if they were 2020 or later Forms W-4 for purposes of figuring federal income tax withholding, using equivalent computational procedures and data fields.",
+      "source_section": "How To Treat 2019 and Earlier Forms W-4 as if They Were 2020 or Later Forms W-4",
+      "source_page": 5,
+      "evaluation": {
+        "type": "conceptual",
+        "retrieval_required": true,
+        "answer_must_contain": [
+          "2019 and earlier",
+          "2020 or later",
+          "computational bridge",
+          "federal income tax withholding"
+        ]
+      },
+      "retrieval_ground_truth": {
+        "source_page": 5,
+        "source_section": "How To Treat 2019 and Earlier Forms W-4 as if They Were 2020 or Later Forms W-4",
+        "evidence": "The computational bridge allows employers to treat 2019 and earlier Forms W-4 as if they were 2020 or later Forms W-4 for purposes of figuring federal income tax withholding, using equivalent computational procedures and data fields."
+      }
+    },
+    {
+      "id": "gd_029",
+      "query": "What special rule applies when converting a nonresident alien employee's 2019 or earlier Form W-4 using the computational bridge?",
+      "expected_answer": "When converting a nonresident alien employee's 2019 or earlier Form W-4 to a 2020 or later Form W-4, $4,300 must always be entered in Step 4(a) for the second adjustment, and Table 2 must be used when adding an amount to wages for figuring federal income tax withholding.",
+      "source_section": "Computational Bridge - Nonresident Alien Employees",
+      "source_page": 6,
+      "evaluation": {
+        "type": "special_case",
+        "retrieval_required": true,
+        "answer_must_contain": [
+          "$4,300",
+          "Step 4(a)",
+          "Table 2",
+          "nonresident alien"
+        ]
+      },
+      "retrieval_ground_truth": {
+        "source_page": 6,
+        "source_section": "Computational Bridge - Nonresident Alien Employees",
+        "evidence": "When converting a nonresident alien employee's 2019 or earlier Form W-4 to a 2020 or later Form W-4, $4,300 must always be entered in Step 4(a) for the second adjustment, and Table 2 must be used when adding an amount to wages for figuring federal income tax withholding."
+      }
+    },
+    {
+      "id": "gd_030",
+      "query": "What must an electronic Form W-4 system provide for nonresident alien status?",
+      "expected_answer": "An electronic Form W-4 system must provide a field for nonresident aliens to enter their nonresident alien status.",
+      "source_section": "Electronic Substitute to Form W-4",
+      "source_page": 5,
+      "evaluation": {
+        "type": "factual",
+        "retrieval_required": true,
+        "answer_must_contain": [
+          "field",
+          "nonresident alien status"
+        ]
+      },
+      "retrieval_ground_truth": {
+        "source_page": 5,
+        "source_section": "Electronic Substitute to Form W-4",
+        "evidence": "An electronic Form W-4 system must provide a field for nonresident aliens to enter their nonresident alien status."
+      }
+    }
+  ]
+}

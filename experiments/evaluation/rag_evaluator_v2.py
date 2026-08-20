@@ -1,8 +1,4 @@
 from evaluation.evaluation_dataclass import EvaluationResult
-from evaluation.evidence_matching import (
-    extract_evidence_items,
-    find_matching_evidence,
-)
 
 
 class RAGEvaluator:
@@ -240,13 +236,150 @@ class RAGEvaluator:
     # ============================================================
     # PRIVATE METHODS
     # ============================================================
-    # Evidence extraction/matching lives in evaluation/evidence_matching.py
-    # so it can be shared with evaluation/retrieval_metrics.py (which
-    # needs the exact same "does this chunk contain this evidence
-    # text" logic to compute Recall@K/MRR/NDCG@K).
 
-    def _extract_evidence_items(self, retrieval_ground_truth):
-        return extract_evidence_items(retrieval_ground_truth)
+    def _extract_evidence_items(
+        self,
+        retrieval_ground_truth,
+    ):
+        """
+        Extract evidence items from retrieval ground truth.
 
-    def _find_matching_evidence(self, chunk_content, evidence_items):
-        return find_matching_evidence(chunk_content, evidence_items)
+        Supported structure:
+
+        {
+            "evidence": [
+                {
+                    "text": "...",
+                    "page": 12
+                },
+                {
+                    "text": "...",
+                    "page": 13
+                }
+            ]
+        }
+
+        Also supports:
+
+        {
+            "evidence": [
+                "evidence text 1",
+                "evidence text 2"
+            ]
+        }
+        """
+
+        if not retrieval_ground_truth:
+            return []
+
+        evidence = retrieval_ground_truth.get(
+            "evidence",
+            []
+        )
+
+        if not isinstance(evidence, list):
+            return []
+
+        evidence_items = []
+
+        for item in evidence:
+
+            # ----------------------------------------------------
+            # Evidence stored as string
+            # ----------------------------------------------------
+
+            if isinstance(item, str):
+
+                text = item.strip()
+
+                if text:
+                    evidence_items.append(
+                        {
+                            "text": text,
+                        }
+                    )
+
+            # ----------------------------------------------------
+            # Evidence stored as object
+            # ----------------------------------------------------
+
+            elif isinstance(item, dict):
+
+                text = item.get("text")
+
+                if not text:
+                    continue
+
+                evidence_items.append(
+                    {
+                        "text": text.strip(),
+                        "source": item.get("source"),
+                        "page": item.get("page"),
+                    }
+                )
+
+        return evidence_items
+
+    def _find_matching_evidence(
+        self,
+        chunk_content,
+        evidence_items,
+    ):
+        """
+        Determine which evidence items are present in a chunk.
+
+        Matching is intentionally based on normalized text rather
+        than chunk_id.
+
+        A match is considered successful when the normalized
+        evidence text occurs inside the normalized chunk.
+
+        This works when the evidence passage is fully contained
+        within a retrieved chunk.
+        """
+
+        normalized_chunk = self._normalize_text(
+            chunk_content
+        )
+
+        matched_indexes = []
+
+        for index, evidence_item in enumerate(
+            evidence_items
+        ):
+
+            evidence_text = evidence_item.get(
+                "text",
+                ""
+            )
+
+            normalized_evidence = self._normalize_text(
+                evidence_text
+            )
+
+            if not normalized_evidence:
+                continue
+
+            if normalized_evidence in normalized_chunk:
+
+                matched_indexes.append(index)
+
+        return matched_indexes
+
+    @staticmethod
+    def _normalize_text(text):
+        """
+        Normalize text so matching is not affected by:
+
+        - Case
+        - Multiple spaces
+        - Newlines
+        - Tabs
+        """
+
+        if not text:
+            return ""
+
+        return " ".join(
+            text.lower().split()
+        )

@@ -1,0 +1,1448 @@
+Writing evaluation output to: C:\Inceptez\git_local_tax\tax-filing-assistant\evaluation\results\evaluation_run_20260819_122252.txt
+
+
+========== BEFORE CLEANING ==========
+Userid: CPM Schema: tipx Leadpct: 100% Pt. size: 10  Draft  Ok to Print
+AH XSL/XML Fileid: … ation-15-t/2026/a/xml/cycle07/source (Init. & Date) _______
+Page 1 of 71  15:14 - 3-Dec-2025
+The type and rule above prints on all proofs including departmental reproduction proofs. MUST be removed before printing.
+Publication 15-T
+Federal 
+Income Tax 
+Withholding 
+Methods
+For use in 2026
+Get forms and other information faster and easier at:
+• IRS.gov (English) 
+• IRS.gov/Spanish (Español) 
+• IRS.gov/Chi
+
+Cleaning is completed
+
+========== AFTER CLEANING ==========
+Userid: CPM Schema: tipx Leadpct: 100% Pt. size: 10 Draft Ok to Print AH XSL/XML Fileid: … ation-15-t/2026/a/xml/cycle07/source (Init. & Date) _______ 15:14 - 3-Dec-2025 The type and rule above prints on all proofs including departmental reproduction proofs. MUST be removed before printing. Federal Income Tax Withholding Methods For use in 2026 Get forms and other information faster and easier at: • (English) • /Spanish (Español) • /Chinese (中文) • /Korean (한국어) • /Russian (Pусский) • /Vietnamese
+
+Entire Cleaning Process is completed
+
+================================================================================
+Question ID : gd_001
+Query       : What is IRS Publication 15-T used for?
+================================================================================
+
+---------- RETRIEVAL RESULTS ----------
+
+[Rank 1]
+Score        : 0.7397
+Chunk ID      : 5bf17cfef505f83fc5b560c0818488761c866b5b899d19d63d5125b6a9591d76
+Source        : C:\Inceptez\git_local_tax\tax-filing-assistant\data\pdf\IRS_Publication15T.pdf
+Page          : 2
+Chunk No      : 4
+Total Chunks  : 9
+Content       :
+at /pub/irs-irbs/irb99-04.pdf. Introduction This publication supplements Pub. 15, Employer’s T ax Guide. It describes how to figure withholding using the Wage Bracket Method or Percentage Method, describes the alternative methods for figuring withholding, and pro- vides the T ables for Withholding on Distributions of Indian Gaming Profits to T ribal Members. Although this publication may be used in certain situa- tions to figure federal income tax withholding on supple- mental wages, the methods
+
+[Rank 2]
+Score        : 0.7284
+Chunk ID      : d1f6715391f764ad2e654fd770dff12c09c35193a01d0d61397b202cb9332c0c
+Source        : C:\Inceptez\git_local_tax\tax-filing-assistant\data\pdf\IRS_Publication15T.pdf
+Page          : 1
+Chunk No      : 7
+Total Chunks  : 11
+Content       :
+and 1099-NEC) with the SSA or IRS, as applicable, and fur- nish statements to overtime recipients showing qualified overtime compensation paid during the year. However, the IRS has provided transition relief to employers and payers for the tax year 2025 reporting requirements. For more in- formation, see Notice 2025-62. Reminders IRS Tax Withholding Estimator. Employees and payees may use the IRS T ax Withholding Estimator, available at /W4App, when completing their Form W -4 or their Form W-4P 
+
+[Rank 3]
+Score        : 0.7263
+Chunk ID      : f67f0226ea5596782b6f9f787d1d3d46a81bd39ab6e7a1171227f4f2828278e2
+Source        : C:\Inceptez\git_local_tax\tax-filing-assistant\data\pdf\IRS_Publication15T.pdf
+Page          : 68
+Chunk No      : 9
+Total Chunks  : 10
+Content       :
+15 -T) on mobile devices as eBooks at /eBooks. IRS eBooks have been tested using Apple’s iBooks for iPad. Our eBooks haven’t been tested on other dedicated eBook readers, and eBook functionality may not operate as intended. Get a transcript of your return. Y ou can now access Form 940, Form 941, Form 943, Form 944, and Form 945 return transcripts for tax years 2023 and later using your IRS business tax account. For more information, go to /BusinessT ranscript. T o access your IRS business tax ac
+
+---------- EVALUATION RESULT ----------
+Question ID       : gd_001
+Retrieval Success  : False
+Retrieved Count    : 3
+Top Score          : 0.7397
+Hit@3            : 0.0000
+Recall@3         : 0.0000
+MRR                : 0.0000
+Status             : RETRIEVAL_FAILED
+
+================================================================================
+Question ID : gd_002
+Query       : What changed in the 2026 federal income tax withholding tables?
+================================================================================
+
+---------- RETRIEVAL RESULTS ----------
+
+[Rank 1]
+Score        : 0.8461
+Chunk ID      : b2b22b4c7d779e4527bd0a081ba9b1658c8355035b0160b970bf214b471540a8
+Source        : C:\Inceptez\git_local_tax\tax-filing-assistant\data\pdf\IRS_Publication15T.pdf
+Page          : 0
+Chunk No      : 3
+Total Chunks  : 5
+Content       :
+Systems With Forms W-4 From 2019 or Earlier ........................ 63 6. Alternative Methods for Figuring Withholding .......................... 66 7. Tables for Withholding on Distributions of Indian Gaming Profits to Tribal Members ... 67 How To Get Tax Help ....................... 68 Future Developments For the latest information about developments related to Pub. 15 -T , such as legislation enacted after it was published, go to /Pub15T. What’s New 2026 federal income tax withholding tables
+
+[Rank 2]
+Score        : 0.8156
+Chunk ID      : 8fd21d305068e78e043b9528fc8f955940691fb148b7a1d4539a0feebb07667f
+Source        : C:\Inceptez\git_local_tax\tax-filing-assistant\data\pdf\IRS_Publication15T.pdf
+Page          : 0
+Chunk No      : 5
+Total Chunks  : 5
+Content       :
+The 2026 Form W-4 was also updated to add a new checkbox below Step 4(c) for an employee to claim ex- emption from federal income tax withholding. Previously, the employee wrote “Exempt” below Step 4(c). 2026 Form W-4P . Form W-4P , Withholding Certificate for Periodic Pension or Annuity Payments, has been updated for 2026 to account for new federal income tax deductions under P .L. 119-21 that are available to payees when they T (2026) Catalog Number 32112B Dec 3, 2025 Department of the T reasu
+
+[Rank 3]
+Score        : 0.7802
+Chunk ID      : 3a3d9b5ad05e224aae27e51a0564fa1539fd4557bac65711c1c6465b6e017c53
+Source        : C:\Inceptez\git_local_tax\tax-filing-assistant\data\pdf\IRS_Publication15T.pdf
+Page          : 0
+Chunk No      : 4
+Total Chunks  : 5
+Content       :
+updated for changes made by P .L. 119 -21, commonly known as the One Big Beautiful Bill Act, includ- ing the permanent extension of individual tax rates, the permanent extension of the increased standard deduc- tion, and the permanent termination of personal exemp- tions, which were all originally enacted by the T ax Cuts and Jobs Act (P .L. 115-97). 2026 Form W -4. Form W -4, Employee’s Withholding Certificate, has been updated for 2026 to account for new federal income tax deductions under P .
+
+---------- EVALUATION RESULT ----------
+Question ID       : gd_002
+Retrieval Success  : False
+Retrieved Count    : 3
+Top Score          : 0.8461
+Hit@3            : 0.0000
+Recall@3         : 0.0000
+MRR                : 0.0000
+Status             : RETRIEVAL_FAILED
+
+================================================================================
+Question ID : gd_003
+Query       : What are the main withholding methods covered by Publication 15-T?
+================================================================================
+
+---------- RETRIEVAL RESULTS ----------
+
+[Rank 1]
+Score        : 0.7789
+Chunk ID      : 5bf17cfef505f83fc5b560c0818488761c866b5b899d19d63d5125b6a9591d76
+Source        : C:\Inceptez\git_local_tax\tax-filing-assistant\data\pdf\IRS_Publication15T.pdf
+Page          : 2
+Chunk No      : 4
+Total Chunks  : 9
+Content       :
+at /pub/irs-irbs/irb99-04.pdf. Introduction This publication supplements Pub. 15, Employer’s T ax Guide. It describes how to figure withholding using the Wage Bracket Method or Percentage Method, describes the alternative methods for figuring withholding, and pro- vides the T ables for Withholding on Distributions of Indian Gaming Profits to T ribal Members. Although this publication may be used in certain situa- tions to figure federal income tax withholding on supple- mental wages, the methods
+
+[Rank 2]
+Score        : 0.7596
+Chunk ID      : b2b22b4c7d779e4527bd0a081ba9b1658c8355035b0160b970bf214b471540a8
+Source        : C:\Inceptez\git_local_tax\tax-filing-assistant\data\pdf\IRS_Publication15T.pdf
+Page          : 0
+Chunk No      : 3
+Total Chunks  : 5
+Content       :
+Systems With Forms W-4 From 2019 or Earlier ........................ 63 6. Alternative Methods for Figuring Withholding .......................... 66 7. Tables for Withholding on Distributions of Indian Gaming Profits to Tribal Members ... 67 How To Get Tax Help ....................... 68 Future Developments For the latest information about developments related to Pub. 15 -T , such as legislation enacted after it was published, go to /Pub15T. What’s New 2026 federal income tax withholding tables
+
+[Rank 3]
+Score        : 0.7575
+Chunk ID      : 4b77a5a41e9eb0ab06cc405e15d22cad4af9497a82f7c84c21917cbd203a837f
+Source        : C:\Inceptez\git_local_tax\tax-filing-assistant\data\pdf\IRS_Publication15T.pdf
+Page          : 65
+Chunk No      : 1
+Total Chunks  : 10
+Content       :
+Fileid: … ation-15-t/2026/a/xml/cycle07/source 15:14 - 3-Dec-2025 The type and rule above prints on all proofs including departmental reproduction proofs. MUST be removed before printing. 6. Alternative Methods for Figuring Withholding Y ou may use various methods for figuring federal income tax withholding. The methods described next may be used instead of the Percentage Method and Wage Bracket Method discussed earlier in this publication. Use the method that best suits your payroll system and 
+
+---------- EVALUATION RESULT ----------
+Question ID       : gd_003
+Retrieval Success  : False
+Retrieved Count    : 3
+Top Score          : 0.7789
+Hit@3            : 0.0000
+Recall@3         : 0.0000
+MRR                : 0.0000
+Status             : RETRIEVAL_FAILED
+
+================================================================================
+Question ID : gd_004
+Query       : What information does an employee provide on Form W-4 from 2020 or later?
+================================================================================
+
+---------- RETRIEVAL RESULTS ----------
+
+[Rank 1]
+Score        : 0.8143
+Chunk ID      : 6e5ac2860b14745cf879a05fe4b2da472f072942a970a6dae712c7636f6f76f6
+Source        : C:\Inceptez\git_local_tax\tax-filing-assistant\data\pdf\IRS_Publication15T.pdf
+Page          : 5
+Chunk No      : 3
+Total Chunks  : 9
+Content       :
+claimed on line 5 of an employee’s 2019 or earlier Form W-4 by $4,300 and enter the result in Step 4(b) on a 2020 or later Form W-4. 4. Enter the additional amount of withholding requested by the employee on line 6 of their 2019 or earlier Form W-4 in Step 4(c) of a 2020 or later Form W-4. Caution: This computational bridge applies only for Forms W-4 that were in effect on or before December 31, 2019, and that continue in effect because an employee didn’t submit a 2020 or later Form W -4. If an 
+
+[Rank 2]
+Score        : 0.8082
+Chunk ID      : 5e62362a70f02720235d5ac885078e4cbff547e153c863f1d5f1f091387a004a
+Source        : C:\Inceptez\git_local_tax\tax-filing-assistant\data\pdf\IRS_Publication15T.pdf
+Page          : 4
+Chunk No      : 10
+Total Chunks  : 10
+Content       :
+a 2020 and later Form W -4 to arrive at the equivalent withholding for an employee that would have applied using the compu- tational procedures and data fields on a 2019 or earlier Form W-4. Y ou must make up to four adjustments to use this computational bridge. 1. Select the filing status in Step 1(c) of a 2020 or later Form W-4 that most accurately reflects the (2026) 5
+
+[Rank 3]
+Score        : 0.7880
+Chunk ID      : f46e72340fcd73c35ef51b849462472422b99187a40968f2638c38b540bde0b0
+Source        : C:\Inceptez\git_local_tax\tax-filing-assistant\data\pdf\IRS_Publication15T.pdf
+Page          : 2
+Chunk No      : 9
+Total Chunks  : 9
+Content       :
+at the photographs and calling 1 -800-THE-LOST (1-800-843-5678) if you recognize a child. Form W-4 Beginning with the 2020 Form W-4, employees are no lon- ger able to request adjustments to their withholding using withholding allowances. Instead, using the new Form W-4, employees provide employers with amounts to increase or (2026) 3
+
+---------- EVALUATION RESULT ----------
+Question ID       : gd_004
+Retrieval Success  : False
+Retrieved Count    : 3
+Top Score          : 0.8143
+Hit@3            : 0.0000
+Recall@3         : 0.0000
+MRR                : 0.0000
+Status             : RETRIEVAL_FAILED
+
+================================================================================
+Question ID : gd_005
+Query       : What are the five steps on Form W-4?
+================================================================================
+
+---------- RETRIEVAL RESULTS ----------
+
+[Rank 1]
+Score        : 0.7909
+Chunk ID      : d37620604cdf9c99ddeb0965c8e672c83320fa07d0817af35e03a41afc3cc817
+Source        : C:\Inceptez\git_local_tax\tax-filing-assistant\data\pdf\IRS_Publication15T.pdf
+Page          : 6
+Chunk No      : 7
+Total Chunks  : 10
+Content       :
+withholding. Form W -4P contains 5 steps. Every Form W-4P payers receive from a payee in 2022 or later should show a completed Step 1 (name, address, SSN, and filing status) and a dated signature in Step 5. Payees complete Steps 2, 3, and/or 4 only if relevant to their personal situa- tions. Steps 2, 3, and 4 show adjustments that affect with- holding calculations. For payees completing one or more of Steps 2, 3, and/or 4 on a 2022 or later Form W-4P , adjustments are as follows. Step 2. If the 
+
+[Rank 2]
+Score        : 0.7875
+Chunk ID      : 0241e4de6d18f1577e172a316036142c38139a9a546995b95a1749babef8ec5f
+Source        : C:\Inceptez\git_local_tax\tax-filing-assistant\data\pdf\IRS_Publication15T.pdf
+Page          : 3
+Chunk No      : 1
+Total Chunks  : 11
+Content       :
+Fileid: … ation-15-t/2026/a/xml/cycle07/source 15:14 - 3-Dec-2025 The type and rule above prints on all proofs including departmental reproduction proofs. MUST be removed before printing. decrease the amount of taxes withheld and amounts to in- crease or decrease the amount of wage income subject to income tax withholding. Form W-4 contains 5 steps. Every Form W-4 employers receive from an employee in 2020 or later should show a completed Step 1 (name, address, social security number (SSN), and 
+
+[Rank 3]
+Score        : 0.7722
+Chunk ID      : 60ec11b66cef590e142923e848463d278dd5630845eb197e18b64202f4374b11
+Source        : C:\Inceptez\git_local_tax\tax-filing-assistant\data\pdf\IRS_Publication15T.pdf
+Page          : 10
+Chunk No      : 11
+Total Chunks  : 12
+Content       :
+2u $ Step 3. Account for tax credits 3a If the payee has submitted a Form W-4P for 2022 or later, enter the amount from Step 3 of that form; otherwise, enter -0- ...................................................................... 3a $ 3b Subtract line 3a from line 2u. If zero or less, enter -0- .......................................... 3b $ Step 4. Figure the final amount to withhold 4a Divide the amount on line 3b by the number of payment periods from line 1b .......................... 4a $
+
+---------- EVALUATION RESULT ----------
+Question ID       : gd_005
+Retrieval Success  : False
+Retrieved Count    : 3
+Top Score          : 0.7909
+Hit@3            : 0.0000
+Recall@3         : 0.0000
+MRR                : 0.0000
+Status             : RETRIEVAL_FAILED
+
+================================================================================
+Question ID : gd_006
+Query       : What happens when an employee checks the Step 2 checkbox on Form W-4?
+================================================================================
+
+---------- RETRIEVAL RESULTS ----------
+
+[Rank 1]
+Score        : 0.7902
+Chunk ID      : c19504e70d4b5efedba9b222057ad30dfab64261ed37dddf2386dcad30a78e29
+Source        : C:\Inceptez\git_local_tax\tax-filing-assistant\data\pdf\IRS_Publication15T.pdf
+Page          : 9
+Chunk No      : 4
+Total Chunks  : 9
+Content       :
+employee HAS submitted a Form W-4 for 2020 or later, figure the Adjusted Annual Wage Amount as follows. 1d Enter the amount from Step 4(a) of the employee’s Form W-4 ................................. 1d $ 1e Add lines 1c and 1d .............................................................. 1e $ 1f Enter the amount from Step 4(b) of the employee’s Form W-4 ................................. 1f $ 1g If the box in Step 2 of Form W-4 is checked, enter -0-. If the box is not checked, enter $12,900 if 
+
+[Rank 2]
+Score        : 0.7845
+Chunk ID      : 39c90f522ff1c84cb64fabe22386000598a07bf1fb86c1591ce3613c38ea1c50
+Source        : C:\Inceptez\git_local_tax\tax-filing-assistant\data\pdf\IRS_Publication15T.pdf
+Page          : 3
+Chunk No      : 2
+Total Chunks  : 11
+Content       :
+3, and/or 4 only if relevant to their personal situations. Steps 2, 3, and 4 show adjust- ments that affect withholding calculations. For employees who don’t complete any steps other than Step 1 and Step 5, employers withhold the amount based on the filing status, wage amounts, and payroll pe- riod. But see Exemption from withholding, later. For employees completing one or more of Steps 2, 3, and/or 4 on Form W-4, adjustments are as follows. Step 2. If the employee checks the box in Step 2, the 
+
+[Rank 3]
+Score        : 0.7773
+Chunk ID      : d37620604cdf9c99ddeb0965c8e672c83320fa07d0817af35e03a41afc3cc817
+Source        : C:\Inceptez\git_local_tax\tax-filing-assistant\data\pdf\IRS_Publication15T.pdf
+Page          : 6
+Chunk No      : 7
+Total Chunks  : 10
+Content       :
+withholding. Form W -4P contains 5 steps. Every Form W-4P payers receive from a payee in 2022 or later should show a completed Step 1 (name, address, SSN, and filing status) and a dated signature in Step 5. Payees complete Steps 2, 3, and/or 4 only if relevant to their personal situa- tions. Steps 2, 3, and 4 show adjustments that affect with- holding calculations. For payees completing one or more of Steps 2, 3, and/or 4 on a 2022 or later Form W-4P , adjustments are as follows. Step 2. If the 
+
+---------- EVALUATION RESULT ----------
+Question ID       : gd_006
+Retrieval Success  : False
+Retrieved Count    : 3
+Top Score          : 0.7902
+Hit@3            : 0.0000
+Recall@3         : 0.0000
+MRR                : 0.0000
+Status             : RETRIEVAL_FAILED
+
+================================================================================
+Question ID : gd_007
+Query       : How does Step 3 of Form W-4 affect federal income tax withholding?
+================================================================================
+
+---------- RETRIEVAL RESULTS ----------
+
+[Rank 1]
+Score        : 0.8591
+Chunk ID      : d37620604cdf9c99ddeb0965c8e672c83320fa07d0817af35e03a41afc3cc817
+Source        : C:\Inceptez\git_local_tax\tax-filing-assistant\data\pdf\IRS_Publication15T.pdf
+Page          : 6
+Chunk No      : 7
+Total Chunks  : 10
+Content       :
+withholding. Form W -4P contains 5 steps. Every Form W-4P payers receive from a payee in 2022 or later should show a completed Step 1 (name, address, SSN, and filing status) and a dated signature in Step 5. Payees complete Steps 2, 3, and/or 4 only if relevant to their personal situa- tions. Steps 2, 3, and 4 show adjustments that affect with- holding calculations. For payees completing one or more of Steps 2, 3, and/or 4 on a 2022 or later Form W-4P , adjustments are as follows. Step 2. If the 
+
+[Rank 2]
+Score        : 0.8462
+Chunk ID      : 0241e4de6d18f1577e172a316036142c38139a9a546995b95a1749babef8ec5f
+Source        : C:\Inceptez\git_local_tax\tax-filing-assistant\data\pdf\IRS_Publication15T.pdf
+Page          : 3
+Chunk No      : 1
+Total Chunks  : 11
+Content       :
+Fileid: … ation-15-t/2026/a/xml/cycle07/source 15:14 - 3-Dec-2025 The type and rule above prints on all proofs including departmental reproduction proofs. MUST be removed before printing. decrease the amount of taxes withheld and amounts to in- crease or decrease the amount of wage income subject to income tax withholding. Form W-4 contains 5 steps. Every Form W-4 employers receive from an employee in 2020 or later should show a completed Step 1 (name, address, social security number (SSN), and 
+
+[Rank 3]
+Score        : 0.8449
+Chunk ID      : 39c90f522ff1c84cb64fabe22386000598a07bf1fb86c1591ce3613c38ea1c50
+Source        : C:\Inceptez\git_local_tax\tax-filing-assistant\data\pdf\IRS_Publication15T.pdf
+Page          : 3
+Chunk No      : 2
+Total Chunks  : 11
+Content       :
+3, and/or 4 only if relevant to their personal situations. Steps 2, 3, and 4 show adjust- ments that affect withholding calculations. For employees who don’t complete any steps other than Step 1 and Step 5, employers withhold the amount based on the filing status, wage amounts, and payroll pe- riod. But see Exemption from withholding, later. For employees completing one or more of Steps 2, 3, and/or 4 on Form W-4, adjustments are as follows. Step 2. If the employee checks the box in Step 2, the 
+
+---------- EVALUATION RESULT ----------
+Question ID       : gd_007
+Retrieval Success  : False
+Retrieved Count    : 3
+Top Score          : 0.8591
+Hit@3            : 0.0000
+Recall@3         : 0.0000
+MRR                : 0.0000
+Status             : RETRIEVAL_FAILED
+
+================================================================================
+Question ID : gd_008
+Query       : What do Steps 4(a), 4(b), and 4(c) do on Form W-4?
+================================================================================
+
+---------- RETRIEVAL RESULTS ----------
+
+[Rank 1]
+Score        : 0.7952
+Chunk ID      : 0241e4de6d18f1577e172a316036142c38139a9a546995b95a1749babef8ec5f
+Source        : C:\Inceptez\git_local_tax\tax-filing-assistant\data\pdf\IRS_Publication15T.pdf
+Page          : 3
+Chunk No      : 1
+Total Chunks  : 11
+Content       :
+Fileid: … ation-15-t/2026/a/xml/cycle07/source 15:14 - 3-Dec-2025 The type and rule above prints on all proofs including departmental reproduction proofs. MUST be removed before printing. decrease the amount of taxes withheld and amounts to in- crease or decrease the amount of wage income subject to income tax withholding. Form W-4 contains 5 steps. Every Form W-4 employers receive from an employee in 2020 or later should show a completed Step 1 (name, address, social security number (SSN), and 
+
+[Rank 2]
+Score        : 0.7875
+Chunk ID      : d37620604cdf9c99ddeb0965c8e672c83320fa07d0817af35e03a41afc3cc817
+Source        : C:\Inceptez\git_local_tax\tax-filing-assistant\data\pdf\IRS_Publication15T.pdf
+Page          : 6
+Chunk No      : 7
+Total Chunks  : 10
+Content       :
+withholding. Form W -4P contains 5 steps. Every Form W-4P payers receive from a payee in 2022 or later should show a completed Step 1 (name, address, SSN, and filing status) and a dated signature in Step 5. Payees complete Steps 2, 3, and/or 4 only if relevant to their personal situa- tions. Steps 2, 3, and 4 show adjustments that affect with- holding calculations. For payees completing one or more of Steps 2, 3, and/or 4 on a 2022 or later Form W-4P , adjustments are as follows. Step 2. If the 
+
+[Rank 3]
+Score        : 0.7748
+Chunk ID      : c041e90e91aa6cff2d07e63726a98b4525bb396192f9d75b85e6f8da4c7d42ae
+Source        : C:\Inceptez\git_local_tax\tax-filing-assistant\data\pdf\IRS_Publication15T.pdf
+Page          : 3
+Chunk No      : 9
+Total Chunks  : 11
+Content       :
+W -4. In particular, electronic Form W-4 systems set up as a substitute to pa- per Forms W-4 must exactly replicate the text and instruc- tions from the face of the paper Form W -4 beginning with Step 1(c) through Step 4(c) (inclusive), and the “Exempt from withholding” section below Step 4(c), and must allow an employee access to and use of all parts of the calcula- tion shown on the paper Form W-4 and its worksheets. No pop-ups or hoverboxes within those steps are per- mitted for displaying su
+
+---------- EVALUATION RESULT ----------
+Question ID       : gd_008
+Retrieval Success  : False
+Retrieved Count    : 3
+Top Score          : 0.7952
+Hit@3            : 0.0000
+Recall@3         : 0.0000
+MRR                : 0.0000
+Status             : RETRIEVAL_FAILED
+
+================================================================================
+Question ID : gd_009
+Query       : What happens if a new employee does not furnish Form W-4?
+================================================================================
+
+---------- RETRIEVAL RESULTS ----------
+
+[Rank 1]
+Score        : 0.8362
+Chunk ID      : 02d6aa6d07c251fd558426f0f779e909a664d4382eb32750a2b455c62fb2a592
+Source        : C:\Inceptez\git_local_tax\tax-filing-assistant\data\pdf\IRS_Publication15T.pdf
+Page          : 3
+Chunk No      : 6
+Total Chunks  : 11
+Content       :
+who made a mid-year change may be underwithheld or overwithheld once their Form W -4 is ap- plied to the next full calendar year. New employee fails to furnish Form W -4. A new em- ployee who fails to furnish a Form W -4 will be treated as if they had checked the box for Single or Married filing sepa- rately in Step 1(c) and made no entries in Step 2, Step 3, or Step 4 of Form W -4. However, an employee who was paid wages before 2020 and who failed to furnish a Form W-4 should continue to be tre
+
+[Rank 2]
+Score        : 0.7798
+Chunk ID      : 80305fe3fef3c606332eec196e89be9594a57e2ad9dadbe88b01056fb16fa070
+Source        : C:\Inceptez\git_local_tax\tax-filing-assistant\data\pdf\IRS_Publication15T.pdf
+Page          : 4
+Chunk No      : 9
+Total Chunks  : 10
+Content       :
+a web address where the payee can find them on . Employers are prohibited from accepting a substitute form developed by an employee, and an employee fur- nishing such form must be treated as failing to furnish a Form W-4. How To Treat 2019 and Earlier Forms W-4 as if They Were 2020 or Later Forms W-4 Employers may use an optional computational bridge to treat 2019 and earlier Forms W -4 as if they were 2020 or later Forms W -4 for purposes of figuring federal income tax withholding. This computa
+
+[Rank 3]
+Score        : 0.7780
+Chunk ID      : 42866e4b51b0ff765df61e7137978e0afaa8afc9aa4fd42b420e40de53d187b8
+Source        : C:\Inceptez\git_local_tax\tax-filing-assistant\data\pdf\IRS_Publication15T.pdf
+Page          : 3
+Chunk No      : 7
+Total Chunks  : 11
+Content       :
+from withholding. Employees who check the box for exemption from federal income tax withholding below Step 4(c) shall have no federal income tax withheld from their paychecks except in the case of certain supple- mental wages. Generally, an employee may claim exemp- tion from federal income tax withholding because they had no federal income tax liability last year and expect none this year. See the Form W-4 instructions for more informa- tion. Substitute Submissions of Form W-4 General requireme
+
+---------- EVALUATION RESULT ----------
+Question ID       : gd_009
+Retrieval Success  : False
+Retrieved Count    : 3
+Top Score          : 0.8362
+Hit@3            : 0.0000
+Recall@3         : 0.0000
+MRR                : 0.0000
+Status             : RETRIEVAL_FAILED
+
+================================================================================
+Question ID : gd_010
+Query       : When can an employee claim exemption from federal income tax withholding?
+================================================================================
+
+---------- RETRIEVAL RESULTS ----------
+
+[Rank 1]
+Score        : 0.8439
+Chunk ID      : 42866e4b51b0ff765df61e7137978e0afaa8afc9aa4fd42b420e40de53d187b8
+Source        : C:\Inceptez\git_local_tax\tax-filing-assistant\data\pdf\IRS_Publication15T.pdf
+Page          : 3
+Chunk No      : 7
+Total Chunks  : 11
+Content       :
+from withholding. Employees who check the box for exemption from federal income tax withholding below Step 4(c) shall have no federal income tax withheld from their paychecks except in the case of certain supple- mental wages. Generally, an employee may claim exemp- tion from federal income tax withholding because they had no federal income tax liability last year and expect none this year. See the Form W-4 instructions for more informa- tion. Substitute Submissions of Form W-4 General requireme
+
+[Rank 2]
+Score        : 0.7919
+Chunk ID      : 5669ab9d06cc2afc3afea11cb9471bd46ef6ecc35d47a4ec15e59e5f229548e8
+Source        : C:\Inceptez\git_local_tax\tax-filing-assistant\data\pdf\IRS_Publication15T.pdf
+Page          : 3
+Chunk No      : 11
+Total Chunks  : 11
+Content       :
+provide a checkbox for employees who are eligible and want to claim an exemption from with- holding to certify that they are exempt immediately below or after Step 4(c) to allow users to elect no withholding 4 (2026)
+
+[Rank 3]
+Score        : 0.7870
+Chunk ID      : 02d6aa6d07c251fd558426f0f779e909a664d4382eb32750a2b455c62fb2a592
+Source        : C:\Inceptez\git_local_tax\tax-filing-assistant\data\pdf\IRS_Publication15T.pdf
+Page          : 3
+Chunk No      : 6
+Total Chunks  : 11
+Content       :
+who made a mid-year change may be underwithheld or overwithheld once their Form W -4 is ap- plied to the next full calendar year. New employee fails to furnish Form W -4. A new em- ployee who fails to furnish a Form W -4 will be treated as if they had checked the box for Single or Married filing sepa- rately in Step 1(c) and made no entries in Step 2, Step 3, or Step 4 of Form W -4. However, an employee who was paid wages before 2020 and who failed to furnish a Form W-4 should continue to be tre
+
+---------- EVALUATION RESULT ----------
+Question ID       : gd_010
+Retrieval Success  : False
+Retrieved Count    : 3
+Top Score          : 0.8439
+Hit@3            : 0.0000
+Recall@3         : 0.0000
+MRR                : 0.0000
+Status             : RETRIEVAL_FAILED
+
+================================================================================
+Question ID : gd_011
+Query       : What is the difference between the Percentage Method and Wage Bracket Method?
+================================================================================
+
+---------- RETRIEVAL RESULTS ----------
+
+[Rank 1]
+Score        : 0.7866
+Chunk ID      : 5bf17cfef505f83fc5b560c0818488761c866b5b899d19d63d5125b6a9591d76
+Source        : C:\Inceptez\git_local_tax\tax-filing-assistant\data\pdf\IRS_Publication15T.pdf
+Page          : 2
+Chunk No      : 4
+Total Chunks  : 9
+Content       :
+at /pub/irs-irbs/irb99-04.pdf. Introduction This publication supplements Pub. 15, Employer’s T ax Guide. It describes how to figure withholding using the Wage Bracket Method or Percentage Method, describes the alternative methods for figuring withholding, and pro- vides the T ables for Withholding on Distributions of Indian Gaming Profits to T ribal Members. Although this publication may be used in certain situa- tions to figure federal income tax withholding on supple- mental wages, the methods
+
+[Rank 2]
+Score        : 0.7838
+Chunk ID      : 20a91f8e1a2f5a2bd5ce3d494f82d8d8e88c6c474652986b1ac877f49ec8f399
+Source        : C:\Inceptez\git_local_tax\tax-filing-assistant\data\pdf\IRS_Publication15T.pdf
+Page          : 3
+Chunk No      : 3
+Total Chunks  : 11
+Content       :
+Percentage Method or Wage Bracket Method tables. This results in higher withholding for the employee. If the employee chooses one of the other options from this step, the higher withholding is in- cluded with any other additional tax amounts per pay pe- riod in Step 4(c). Tip: Consider advising employees to use the IRS T ax Withholding Estimator, available at /W4App, when completing Form W -4 if they expect to work only part of the year; receive dividends, capital gains, social security, bonuses
+
+[Rank 3]
+Score        : 0.7701
+Chunk ID      : 097e08f3b79edaaf8e3939a915b5512da238f58b452c46fa192ed1a06971830d
+Source        : C:\Inceptez\git_local_tax\tax-filing-assistant\data\pdf\IRS_Publication15T.pdf
+Page          : 27
+Chunk No      : 2
+Total Chunks  : 4
+Content       :
+less than $100,000) and up to 10 allowances. If you can’t use the Wage Bracket Method tables because taxable wages exceed the amount from the last bracket of the table (based on marital status and pay period) or the employee claimed more than 10 allowances, use the Percentage Method ta- bles in section 5. Periodic payments of pensions or annuities with a 2021 or earlier Form W -4P . In lieu of Worksheet 1B and the Percentage Method tables in section 1, you may use Worksheet 3 and the Wage Bracke
+
+---------- EVALUATION RESULT ----------
+Question ID       : gd_011
+Retrieval Success  : False
+Retrieved Count    : 3
+Top Score          : 0.7866
+Hit@3            : 0.0000
+Recall@3         : 0.0000
+MRR                : 0.0000
+Status             : RETRIEVAL_FAILED
+
+================================================================================
+Question ID : gd_012
+Query       : When should the Percentage Method tables be used instead of the Wage Bracket Method tables?
+================================================================================
+
+---------- RETRIEVAL RESULTS ----------
+
+[Rank 1]
+Score        : 0.8456
+Chunk ID      : 8d5860af223e7931430ff2c1ac29c3d5c7a6a4a531df9205fa83b49bc0215810
+Source        : C:\Inceptez\git_local_tax\tax-filing-assistant\data\pdf\IRS_Publication15T.pdf
+Page          : 0
+Chunk No      : 2
+Total Chunks  : 5
+Content       :
+Percentage Method Tables for Automated Payroll Systems and Withholding on Periodic Payments of Pensions and Annuities ............................ 10 2. Wage Bracket Method Tables for Manual Payroll Systems With Forms W-4 From 2020 or Later ......................... 13 3. Wage Bracket Method Tables for Manual Payroll Systems With Forms W-4 From 2019 or Earlier ........................ 28 4. Percentage Method Tables for Manual Payroll Systems With Forms W-4 From 2020 or Later ....................
+
+[Rank 2]
+Score        : 0.8231
+Chunk ID      : 514a618966828f54c8e65ad12a33430673f58738c963d23cddc64ffeedc27cfd
+Source        : C:\Inceptez\git_local_tax\tax-filing-assistant\data\pdf\IRS_Publication15T.pdf
+Page          : 56
+Chunk No      : 1
+Total Chunks  : 6
+Content       :
+Fileid: … ation-15-t/2026/a/xml/cycle07/source 15:14 - 3-Dec-2025 The type and rule above prints on all proofs including departmental reproduction proofs. MUST be removed before printing. 4. Percentage Method Tables for Manual Payroll Systems With Forms W-4 From 2020 or Later If you compute payroll manually, your employee has sub- mitted a Form W-4 for 2020 or later, and you prefer to use the Percentage Method or you can’t use the Wage Bracket Method tables because the employee’s annual wages ex
+
+[Rank 3]
+Score        : 0.8187
+Chunk ID      : 1c63201ef41ef48fa39a9423b3b032b017e6203373e194cdd8af3071a10ea29f
+Source        : C:\Inceptez\git_local_tax\tax-filing-assistant\data\pdf\IRS_Publication15T.pdf
+Page          : 12
+Chunk No      : 2
+Total Chunks  : 5
+Content       :
+limited amount of annual wages (generally, less than $100,000). If you can’t use the Wage Bracket Method tables because taxable wages exceed the amount from the last bracket of the table (based on filing status and pay period), use the Percentage Method tables in section 4. Worksheet 2. Employer’s Withholding Worksheet for Wage Bracket Method Tables for Manual Payroll Systems With Forms W-4 From 2020 or Later Keep for Your Records Table 5 Monthly Semimonthly Biweekly Weekly Daily 12 24 26 52 260
+
+---------- EVALUATION RESULT ----------
+Question ID       : gd_012
+Retrieval Success  : False
+Retrieved Count    : 3
+Top Score          : 0.8456
+Hit@3            : 0.0000
+Recall@3         : 0.0000
+MRR                : 0.0000
+Status             : RETRIEVAL_FAILED
+
+================================================================================
+Question ID : gd_013
+Query       : What is the special withholding adjustment for nonresident alien employees?
+================================================================================
+
+---------- RETRIEVAL RESULTS ----------
+
+[Rank 1]
+Score        : 0.8392
+Chunk ID      : a5839ae8f88fe4c082f69a83ea52a9a56d0d4d10a3fd2680f973a31988bcbbdd
+Source        : C:\Inceptez\git_local_tax\tax-filing-assistant\data\pdf\IRS_Publication15T.pdf
+Page          : 65
+Chunk No      : 2
+Total Chunks  : 10
+Content       :
+of federal income tax withholding on the wages of nonresident alien employees. Before you use any of the alternative methods to figure the federal income tax withholding on the wages of nonresident alien employ- ees, see Withholding Adjustment for Nonresident Alien Employees, earlier. Annualized wages. The Percentage Method T ables for Automated Payroll Systems in section 1 and Worksheet 1A allow you to figure federal income tax withholding based on annualized wages. Average estimated wages. Y o
+
+[Rank 2]
+Score        : 0.8216
+Chunk ID      : 32c2ccc72aac53b08833cbe44bd660994ba44526f0128ecfd91ffe3cb6929761
+Source        : C:\Inceptez\git_local_tax\tax-filing-assistant\data\pdf\IRS_Publication15T.pdf
+Page          : 5
+Chunk No      : 7
+Total Chunks  : 9
+Content       :
+mental Form W -4 Instructions for Nonresident Aliens, be- fore completing Form W-4. Apply the procedure discussed next to figure the amount of federal income tax to withhold from the wages of nonresident alien employees performing services within the United States. This procedure only applies to nonresident alien em- ployees who have wages subject to income tax withhold- ing. Caution: Nonresident alien students from India and business apprentices from India aren’t subject to this pro- cedure. In
+
+[Rank 3]
+Score        : 0.8132
+Chunk ID      : a6b81fe7dc619fd3845bfacb555ed18d942ae7f21c1dc02e94dd61ad5c77f3bf
+Source        : C:\Inceptez\git_local_tax\tax-filing-assistant\data\pdf\IRS_Publication15T.pdf
+Page          : 5
+Chunk No      : 8
+Total Chunks  : 9
+Content       :
+wages paid to a nonresident alien em- ployee performing services in the United States, use the following steps. Step 1. Determine if the nonresident alien employee has submitted a Form W -4 for 2020 or later or an earlier Form W-4. Then add to the wages paid to the nonresident alien employee for the payroll period the amount for the applica- ble type of Form W-4 and payroll period. If the nonresident alien employee was first paid wages before 2020 and has not submitted a Form W -4 for 2020 or la
+
+---------- EVALUATION RESULT ----------
+Question ID       : gd_013
+Retrieval Success  : False
+Retrieved Count    : 3
+Top Score          : 0.8392
+Hit@3            : 0.0000
+Recall@3         : 0.0000
+MRR                : 0.0000
+Status             : RETRIEVAL_FAILED
+
+================================================================================
+Question ID : gd_014
+Query       : Are nonresident alien students from India subject to the special withholding adjustment procedure?
+================================================================================
+
+---------- RETRIEVAL RESULTS ----------
+
+[Rank 1]
+Score        : 0.7666
+Chunk ID      : 32c2ccc72aac53b08833cbe44bd660994ba44526f0128ecfd91ffe3cb6929761
+Source        : C:\Inceptez\git_local_tax\tax-filing-assistant\data\pdf\IRS_Publication15T.pdf
+Page          : 5
+Chunk No      : 7
+Total Chunks  : 9
+Content       :
+mental Form W -4 Instructions for Nonresident Aliens, be- fore completing Form W-4. Apply the procedure discussed next to figure the amount of federal income tax to withhold from the wages of nonresident alien employees performing services within the United States. This procedure only applies to nonresident alien em- ployees who have wages subject to income tax withhold- ing. Caution: Nonresident alien students from India and business apprentices from India aren’t subject to this pro- cedure. In
+
+[Rank 2]
+Score        : 0.7250
+Chunk ID      : a5839ae8f88fe4c082f69a83ea52a9a56d0d4d10a3fd2680f973a31988bcbbdd
+Source        : C:\Inceptez\git_local_tax\tax-filing-assistant\data\pdf\IRS_Publication15T.pdf
+Page          : 65
+Chunk No      : 2
+Total Chunks  : 10
+Content       :
+of federal income tax withholding on the wages of nonresident alien employees. Before you use any of the alternative methods to figure the federal income tax withholding on the wages of nonresident alien employ- ees, see Withholding Adjustment for Nonresident Alien Employees, earlier. Annualized wages. The Percentage Method T ables for Automated Payroll Systems in section 1 and Worksheet 1A allow you to figure federal income tax withholding based on annualized wages. Average estimated wages. Y o
+
+[Rank 3]
+Score        : 0.7003
+Chunk ID      : 9092d21a31885fd694eb754fb2e8ad81a0f420cc9ef9150a1f7b3e8bc3546e09
+Source        : C:\Inceptez\git_local_tax\tax-filing-assistant\data\pdf\IRS_Publication15T.pdf
+Page          : 5
+Chunk No      : 6
+Total Chunks  : 9
+Content       :
+always enter $4,300 in Step 4(a) on a 2020 or later Form W -4. If you convert a nonresident alien em- ployee’s 2019 or earlier Form W -4 to a 2020 or later Form W-4, be sure to use T able 2 when adding an amount to their wages for figuring federal income tax withholding. See Withholding Adjustment for Nonresident Alien Em- ployees, later, for more information. For more information, see T reasury Decision 9924, 2020-44 I.R.B. 943, available at /irb/ 2020-44_IRB#TD-9924. Withholding Adjustment for
+
+---------- EVALUATION RESULT ----------
+Question ID       : gd_014
+Retrieval Success  : False
+Retrieved Count    : 3
+Top Score          : 0.7666
+Hit@3            : 0.0000
+Recall@3         : 0.0000
+MRR                : 0.0000
+Status             : RETRIEVAL_FAILED
+
+================================================================================
+Question ID : gd_015
+Query       : How much additional income is added for a weekly payroll period under Table 1 for a nonresident alien employee who was first paid before 2020 and has not submitted a 2020 or later Form W-4?
+================================================================================
+
+---------- RETRIEVAL RESULTS ----------
+
+[Rank 1]
+Score        : 0.8755
+Chunk ID      : a6b81fe7dc619fd3845bfacb555ed18d942ae7f21c1dc02e94dd61ad5c77f3bf
+Source        : C:\Inceptez\git_local_tax\tax-filing-assistant\data\pdf\IRS_Publication15T.pdf
+Page          : 5
+Chunk No      : 8
+Total Chunks  : 9
+Content       :
+wages paid to a nonresident alien em- ployee performing services in the United States, use the following steps. Step 1. Determine if the nonresident alien employee has submitted a Form W -4 for 2020 or later or an earlier Form W-4. Then add to the wages paid to the nonresident alien employee for the payroll period the amount for the applica- ble type of Form W-4 and payroll period. If the nonresident alien employee was first paid wages before 2020 and has not submitted a Form W -4 for 2020 or la
+
+[Rank 2]
+Score        : 0.8379
+Chunk ID      : 0809f529cf54951ad1a4fd0e31a57ffb9862607a6e06a806b5055f7ec2f9e2b9
+Source        : C:\Inceptez\git_local_tax\tax-filing-assistant\data\pdf\IRS_Publication15T.pdf
+Page          : 5
+Chunk No      : 9
+Total Chunks  : 9
+Content       :
+income tax withholding. Table 1 Payroll period Add additional Weekly ............................ $226.90 Biweekly ........................... 453.80 Semimonthly ........................ 491.70 Monthly ........................... 983.30 Quarterly .......................... 2,950.00 Semiannually ........................ 5,900.00 Annually ........................... 11,800.00 Daily or Miscellaneous (each day of the payroll period) ............................ 45.40 If the nonresident alien employe
+
+[Rank 3]
+Score        : 0.8157
+Chunk ID      : 9092d21a31885fd694eb754fb2e8ad81a0f420cc9ef9150a1f7b3e8bc3546e09
+Source        : C:\Inceptez\git_local_tax\tax-filing-assistant\data\pdf\IRS_Publication15T.pdf
+Page          : 5
+Chunk No      : 6
+Total Chunks  : 9
+Content       :
+always enter $4,300 in Step 4(a) on a 2020 or later Form W -4. If you convert a nonresident alien em- ployee’s 2019 or earlier Form W -4 to a 2020 or later Form W-4, be sure to use T able 2 when adding an amount to their wages for figuring federal income tax withholding. See Withholding Adjustment for Nonresident Alien Em- ployees, later, for more information. For more information, see T reasury Decision 9924, 2020-44 I.R.B. 943, available at /irb/ 2020-44_IRB#TD-9924. Withholding Adjustment for
+
+---------- EVALUATION RESULT ----------
+Question ID       : gd_015
+Retrieval Success  : False
+Retrieved Count    : 3
+Top Score          : 0.8755
+Hit@3            : 0.0000
+Recall@3         : 0.0000
+MRR                : 0.0000
+Status             : RETRIEVAL_FAILED
+
+================================================================================
+Question ID : gd_016
+Query       : How much additional income is added for a weekly payroll period under Table 2?
+================================================================================
+
+---------- RETRIEVAL RESULTS ----------
+
+[Rank 1]
+Score        : 0.8361
+Chunk ID      : 0809f529cf54951ad1a4fd0e31a57ffb9862607a6e06a806b5055f7ec2f9e2b9
+Source        : C:\Inceptez\git_local_tax\tax-filing-assistant\data\pdf\IRS_Publication15T.pdf
+Page          : 5
+Chunk No      : 9
+Total Chunks  : 9
+Content       :
+income tax withholding. Table 1 Payroll period Add additional Weekly ............................ $226.90 Biweekly ........................... 453.80 Semimonthly ........................ 491.70 Monthly ........................... 983.30 Quarterly .......................... 2,950.00 Semiannually ........................ 5,900.00 Annually ........................... 11,800.00 Daily or Miscellaneous (each day of the payroll period) ............................ 45.40 If the nonresident alien employe
+
+[Rank 2]
+Score        : 0.7754
+Chunk ID      : c8f1b8eb2f23c29a9b50e8e4d9c88fd0e7e408223e3bbb9c46363320465d71d4
+Source        : C:\Inceptez\git_local_tax\tax-filing-assistant\data\pdf\IRS_Publication15T.pdf
+Page          : 6
+Chunk No      : 2
+Total Chunks  : 10
+Content       :
+payroll period) ............................ 61.90 Step 2. Enter the amount figured in Step 1, earlier, as the total taxable wages on line 1a of the withholding work- sheet that you use to figure federal income tax withhold- ing. The amounts from T ables 1 and 2 are added to wages solely for calculating income tax withholding on the wages of the nonresident alien employee. The amounts from the tables shouldn’t be included in any box on the employee’s Form W-2 and don’t increase the income tax li
+
+[Rank 3]
+Score        : 0.7723
+Chunk ID      : be83bebb9c6cc85f2d84e490fb705d9dd008fb6e8cf9f1cd2f453ce63cf1bee4
+Source        : C:\Inceptez\git_local_tax\tax-filing-assistant\data\pdf\IRS_Publication15T.pdf
+Page          : 9
+Chunk No      : 8
+Total Chunks  : 9
+Content       :
+the amount on line 2e by the percentage on line 2d ................................... 2f $ 2g Add lines 2c and 2f .............................................................. 2g $ 2h Divide the amount on line 2g by the number of pay periods on line 1b. This is the Tentative Withholding Amount ............................................................ 2h $ Step 3. Account for tax credits 3a If the employee’s Form W-4 is from 2020 or later, enter the amount from Step 3 of that form; otherwise
+
+---------- EVALUATION RESULT ----------
+Question ID       : gd_016
+Retrieval Success  : False
+Retrieved Count    : 3
+Top Score          : 0.8361
+Hit@3            : 0.0000
+Recall@3         : 0.0000
+MRR                : 0.0000
+Status             : RETRIEVAL_FAILED
+
+================================================================================
+Question ID : gd_017
+Query       : How much additional income is added under Table 2 for a monthly payroll period?
+================================================================================
+
+---------- RETRIEVAL RESULTS ----------
+
+[Rank 1]
+Score        : 0.8254
+Chunk ID      : 0809f529cf54951ad1a4fd0e31a57ffb9862607a6e06a806b5055f7ec2f9e2b9
+Source        : C:\Inceptez\git_local_tax\tax-filing-assistant\data\pdf\IRS_Publication15T.pdf
+Page          : 5
+Chunk No      : 9
+Total Chunks  : 9
+Content       :
+income tax withholding. Table 1 Payroll period Add additional Weekly ............................ $226.90 Biweekly ........................... 453.80 Semimonthly ........................ 491.70 Monthly ........................... 983.30 Quarterly .......................... 2,950.00 Semiannually ........................ 5,900.00 Annually ........................... 11,800.00 Daily or Miscellaneous (each day of the payroll period) ............................ 45.40 If the nonresident alien employe
+
+[Rank 2]
+Score        : 0.7770
+Chunk ID      : c8f1b8eb2f23c29a9b50e8e4d9c88fd0e7e408223e3bbb9c46363320465d71d4
+Source        : C:\Inceptez\git_local_tax\tax-filing-assistant\data\pdf\IRS_Publication15T.pdf
+Page          : 6
+Chunk No      : 2
+Total Chunks  : 10
+Content       :
+payroll period) ............................ 61.90 Step 2. Enter the amount figured in Step 1, earlier, as the total taxable wages on line 1a of the withholding work- sheet that you use to figure federal income tax withhold- ing. The amounts from T ables 1 and 2 are added to wages solely for calculating income tax withholding on the wages of the nonresident alien employee. The amounts from the tables shouldn’t be included in any box on the employee’s Form W-2 and don’t increase the income tax li
+
+[Rank 3]
+Score        : 0.7744
+Chunk ID      : be83bebb9c6cc85f2d84e490fb705d9dd008fb6e8cf9f1cd2f453ce63cf1bee4
+Source        : C:\Inceptez\git_local_tax\tax-filing-assistant\data\pdf\IRS_Publication15T.pdf
+Page          : 9
+Chunk No      : 8
+Total Chunks  : 9
+Content       :
+the amount on line 2e by the percentage on line 2d ................................... 2f $ 2g Add lines 2c and 2f .............................................................. 2g $ 2h Divide the amount on line 2g by the number of pay periods on line 1b. This is the Tentative Withholding Amount ............................................................ 2h $ Step 3. Account for tax credits 3a If the employee’s Form W-4 is from 2020 or later, enter the amount from Step 3 of that form; otherwise
+
+---------- EVALUATION RESULT ----------
+Question ID       : gd_017
+Retrieval Success  : False
+Retrieved Count    : 3
+Top Score          : 0.8254
+Hit@3            : 0.0000
+Recall@3         : 0.0000
+MRR                : 0.0000
+Status             : RETRIEVAL_FAILED
+
+================================================================================
+Question ID : gd_018
+Query       : Are the additional amounts from Tables 1 and 2 reported on Form W-2?
+================================================================================
+
+---------- RETRIEVAL RESULTS ----------
+
+[Rank 1]
+Score        : 0.7744
+Chunk ID      : 8e4cd95ea5ab4cff8c1634db5b8fc858e1c841d414fbc49c8c3dab882ff4afc3
+Source        : C:\Inceptez\git_local_tax\tax-filing-assistant\data\pdf\IRS_Publication15T.pdf
+Page          : 10
+Chunk No      : 5
+Total Chunks  : 12
+Content       :
+for 2022 or later AND Step 2(b)(iii) of Form W-4P contains a non-zero amount, complete Parts I, II, and III of Step 2. Otherwise, complete Parts I and III only. Part I: If the payee HAS submitted a Form W-4P for 2022 or later AND Step 2(b)(iii) of Form W-4P contains a non-zero amount, complete lines 2a–2c and then resume on line 2e. Otherwise, begin on line 2d. 2a Enter the amount from Step 2(b)(iii) of Form W-4P ........................................... 2a $ 2b Enter $12,900 if the taxpayer i
+
+[Rank 2]
+Score        : 0.7534
+Chunk ID      : c19504e70d4b5efedba9b222057ad30dfab64261ed37dddf2386dcad30a78e29
+Source        : C:\Inceptez\git_local_tax\tax-filing-assistant\data\pdf\IRS_Publication15T.pdf
+Page          : 9
+Chunk No      : 4
+Total Chunks  : 9
+Content       :
+employee HAS submitted a Form W-4 for 2020 or later, figure the Adjusted Annual Wage Amount as follows. 1d Enter the amount from Step 4(a) of the employee’s Form W-4 ................................. 1d $ 1e Add lines 1c and 1d .............................................................. 1e $ 1f Enter the amount from Step 4(b) of the employee’s Form W-4 ................................. 1f $ 1g If the box in Step 2 of Form W-4 is checked, enter -0-. If the box is not checked, enter $12,900 if 
+
+[Rank 3]
+Score        : 0.7508
+Chunk ID      : 40c2e0bf7027cdd5c2324e7152a80cbcf96fd4ff10fe4cc687e0dece4328fb99
+Source        : C:\Inceptez\git_local_tax\tax-filing-assistant\data\pdf\IRS_Publication15T.pdf
+Page          : 10
+Chunk No      : 8
+Total Chunks  : 12
+Content       :
+2i $ 2j Add lines 2f and 2i ................................................................ 2j $ Part II: (Complete Part II if there is an amount on line 2a above. Skip Part II if there is an amount on line 2d above.) 2k Enter the amount from Step 2(b)(iii) of the payee’s Form W-4P , even if negative......................... 2k $ 2l Enter the payee’s Adjusted Annual Payment Amount from line 1i above, even if negative ................. 2l $ 2m Add lines 2k and 2l. If the result is zero or less, 
+
+---------- EVALUATION RESULT ----------
+Question ID       : gd_018
+Retrieval Success  : False
+Retrieved Count    : 3
+Top Score          : 0.7744
+Hit@3            : 0.0000
+Recall@3         : 0.0000
+MRR                : 0.0000
+Status             : RETRIEVAL_FAILED
+
+================================================================================
+Question ID : gd_019
+Query       : Do the amounts added from Tables 1 and 2 affect Social Security or Medicare taxes?
+================================================================================
+
+---------- RETRIEVAL RESULTS ----------
+
+[Rank 1]
+Score        : 0.7615
+Chunk ID      : 97ba648b060f62cfadf8af3a36c8f2282fb8e0877dd34ea8505b8ad1d1b3c78c
+Source        : C:\Inceptez\git_local_tax\tax-filing-assistant\data\pdf\IRS_Publication15T.pdf
+Page          : 6
+Chunk No      : 5
+Total Chunks  : 10
+Content       :
+$226.90 added to wages for calculating income tax withholding isn’t reported on Form W -2 and doesn’t in- crease the income tax liability of the employee. Also, the $226.90 added to wages doesn’t affect the social security tax or Medicare tax liability of the employer or the em- ployee, or the FUTA tax liability of the employer. Supplemental wage payment. This procedure for deter- mining the amount of federal income tax withholding for nonresident alien employees doesn’t apply to a supple- menta
+
+[Rank 2]
+Score        : 0.7458
+Chunk ID      : a98e326016f66ce4006288015599b47e774d8555a52e5c3fb01747ab37ec3a3a
+Source        : C:\Inceptez\git_local_tax\tax-filing-assistant\data\pdf\IRS_Publication15T.pdf
+Page          : 1
+Chunk No      : 6
+Total Chunks  : 11
+Content       :
+an employee’s updated Form W-4, if one is submitted by the employee, and the federal income tax withholding procedures in this publication to allow the em- ployee to account for their expected deduction and re- ceive more money in each paycheck instead of waiting un- til filing their income tax return to receive the full benefit of this deduction. Overtime compensation is still generally subject to both the employer share and employee share of social security tax and Medicare tax. Employers and 
+
+[Rank 3]
+Score        : 0.7439
+Chunk ID      : b376b47451395c39cf3f22d1857e13576de93ca734aa073be321aaa843122f78
+Source        : C:\Inceptez\git_local_tax\tax-filing-assistant\data\pdf\IRS_Publication15T.pdf
+Page          : 1
+Chunk No      : 3
+Total Chunks  : 11
+Content       :
+to account for their expected deduction and receive more money in each paycheck instead of waiting until filing their income tax return to receive the full benefit of this deduction. Tips are still generally subject to both the employer share and employee share of social security tax and Medicare tax if the tips received are $20 or more per month. Employers and other payers must file information re- turns (for example, Forms W -2, 1099 -MISC, and 1099-NEC) with the Social Security Administration
+
+---------- EVALUATION RESULT ----------
+Question ID       : gd_019
+Retrieval Success  : False
+Retrieved Count    : 3
+Top Score          : 0.7615
+Hit@3            : 0.0000
+Recall@3         : 0.0000
+MRR                : 0.0000
+Status             : RETRIEVAL_FAILED
+
+================================================================================
+Question ID : gd_020
+Query       : A nonresident alien employee earns $300 in weekly wages and has a qualifying 2019 Form W-4. What amount of wages is used for calculating federal income tax withholding under the example in Publication 15-T?
+================================================================================
+
+---------- RETRIEVAL RESULTS ----------
+
+[Rank 1]
+Score        : 0.8471
+Chunk ID      : a5839ae8f88fe4c082f69a83ea52a9a56d0d4d10a3fd2680f973a31988bcbbdd
+Source        : C:\Inceptez\git_local_tax\tax-filing-assistant\data\pdf\IRS_Publication15T.pdf
+Page          : 65
+Chunk No      : 2
+Total Chunks  : 10
+Content       :
+of federal income tax withholding on the wages of nonresident alien employees. Before you use any of the alternative methods to figure the federal income tax withholding on the wages of nonresident alien employ- ees, see Withholding Adjustment for Nonresident Alien Employees, earlier. Annualized wages. The Percentage Method T ables for Automated Payroll Systems in section 1 and Worksheet 1A allow you to figure federal income tax withholding based on annualized wages. Average estimated wages. Y o
+
+[Rank 2]
+Score        : 0.8439
+Chunk ID      : a6b81fe7dc619fd3845bfacb555ed18d942ae7f21c1dc02e94dd61ad5c77f3bf
+Source        : C:\Inceptez\git_local_tax\tax-filing-assistant\data\pdf\IRS_Publication15T.pdf
+Page          : 5
+Chunk No      : 8
+Total Chunks  : 9
+Content       :
+wages paid to a nonresident alien em- ployee performing services in the United States, use the following steps. Step 1. Determine if the nonresident alien employee has submitted a Form W -4 for 2020 or later or an earlier Form W-4. Then add to the wages paid to the nonresident alien employee for the payroll period the amount for the applica- ble type of Form W-4 and payroll period. If the nonresident alien employee was first paid wages before 2020 and has not submitted a Form W -4 for 2020 or la
+
+[Rank 3]
+Score        : 0.8433
+Chunk ID      : 4fa0add595d3b9efa5825955da0ab33d70ed25467548f1eedd5ecb0dc6389573
+Source        : C:\Inceptez\git_local_tax\tax-filing-assistant\data\pdf\IRS_Publication15T.pdf
+Page          : 6
+Chunk No      : 4
+Total Chunks  : 10
+Content       :
+The employer determines the wages to be used in the withholding tables by adding to the $300 amount of wages paid the amount of $226.90 from T able 1 under Step 1 ($526.90 total). The employer has a manual payroll system and prefers to use the Wage Bracket Method tables to figure withholding. The employer will use Worksheet 3 and the withholding tables in section 3 to de- termine the income tax withholding for the nonresident alien employee. In this example, the employer would with- hold $31 in 
+
+---------- EVALUATION RESULT ----------
+Question ID       : gd_020
+Retrieval Success  : False
+Retrieved Count    : 3
+Top Score          : 0.8471
+Hit@3            : 0.0000
+Recall@3         : 0.0000
+MRR                : 0.0000
+Status             : RETRIEVAL_FAILED
+
+================================================================================
+Question ID : gd_021
+Query       : In the $300 weekly wage example for a nonresident alien employee, how much federal income tax is withheld?
+================================================================================
+
+---------- RETRIEVAL RESULTS ----------
+
+[Rank 1]
+Score        : 0.8142
+Chunk ID      : a5839ae8f88fe4c082f69a83ea52a9a56d0d4d10a3fd2680f973a31988bcbbdd
+Source        : C:\Inceptez\git_local_tax\tax-filing-assistant\data\pdf\IRS_Publication15T.pdf
+Page          : 65
+Chunk No      : 2
+Total Chunks  : 10
+Content       :
+of federal income tax withholding on the wages of nonresident alien employees. Before you use any of the alternative methods to figure the federal income tax withholding on the wages of nonresident alien employ- ees, see Withholding Adjustment for Nonresident Alien Employees, earlier. Annualized wages. The Percentage Method T ables for Automated Payroll Systems in section 1 and Worksheet 1A allow you to figure federal income tax withholding based on annualized wages. Average estimated wages. Y o
+
+[Rank 2]
+Score        : 0.7929
+Chunk ID      : a6b81fe7dc619fd3845bfacb555ed18d942ae7f21c1dc02e94dd61ad5c77f3bf
+Source        : C:\Inceptez\git_local_tax\tax-filing-assistant\data\pdf\IRS_Publication15T.pdf
+Page          : 5
+Chunk No      : 8
+Total Chunks  : 9
+Content       :
+wages paid to a nonresident alien em- ployee performing services in the United States, use the following steps. Step 1. Determine if the nonresident alien employee has submitted a Form W -4 for 2020 or later or an earlier Form W-4. Then add to the wages paid to the nonresident alien employee for the payroll period the amount for the applica- ble type of Form W-4 and payroll period. If the nonresident alien employee was first paid wages before 2020 and has not submitted a Form W -4 for 2020 or la
+
+[Rank 3]
+Score        : 0.7823
+Chunk ID      : 4fa0add595d3b9efa5825955da0ab33d70ed25467548f1eedd5ecb0dc6389573
+Source        : C:\Inceptez\git_local_tax\tax-filing-assistant\data\pdf\IRS_Publication15T.pdf
+Page          : 6
+Chunk No      : 4
+Total Chunks  : 10
+Content       :
+The employer determines the wages to be used in the withholding tables by adding to the $300 amount of wages paid the amount of $226.90 from T able 1 under Step 1 ($526.90 total). The employer has a manual payroll system and prefers to use the Wage Bracket Method tables to figure withholding. The employer will use Worksheet 3 and the withholding tables in section 3 to de- termine the income tax withholding for the nonresident alien employee. In this example, the employer would with- hold $31 in 
+
+---------- EVALUATION RESULT ----------
+Question ID       : gd_021
+Retrieval Success  : False
+Retrieved Count    : 3
+Top Score          : 0.8142
+Hit@3            : 0.0000
+Recall@3         : 0.0000
+MRR                : 0.0000
+Status             : RETRIEVAL_FAILED
+
+================================================================================
+Question ID : gd_022
+Query       : Does the special nonresident alien withholding adjustment apply to supplemental wage payments?
+================================================================================
+
+---------- RETRIEVAL RESULTS ----------
+
+[Rank 1]
+Score        : 0.8385
+Chunk ID      : a5839ae8f88fe4c082f69a83ea52a9a56d0d4d10a3fd2680f973a31988bcbbdd
+Source        : C:\Inceptez\git_local_tax\tax-filing-assistant\data\pdf\IRS_Publication15T.pdf
+Page          : 65
+Chunk No      : 2
+Total Chunks  : 10
+Content       :
+of federal income tax withholding on the wages of nonresident alien employees. Before you use any of the alternative methods to figure the federal income tax withholding on the wages of nonresident alien employ- ees, see Withholding Adjustment for Nonresident Alien Employees, earlier. Annualized wages. The Percentage Method T ables for Automated Payroll Systems in section 1 and Worksheet 1A allow you to figure federal income tax withholding based on annualized wages. Average estimated wages. Y o
+
+[Rank 2]
+Score        : 0.8280
+Chunk ID      : a6b81fe7dc619fd3845bfacb555ed18d942ae7f21c1dc02e94dd61ad5c77f3bf
+Source        : C:\Inceptez\git_local_tax\tax-filing-assistant\data\pdf\IRS_Publication15T.pdf
+Page          : 5
+Chunk No      : 8
+Total Chunks  : 9
+Content       :
+wages paid to a nonresident alien em- ployee performing services in the United States, use the following steps. Step 1. Determine if the nonresident alien employee has submitted a Form W -4 for 2020 or later or an earlier Form W-4. Then add to the wages paid to the nonresident alien employee for the payroll period the amount for the applica- ble type of Form W-4 and payroll period. If the nonresident alien employee was first paid wages before 2020 and has not submitted a Form W -4 for 2020 or la
+
+[Rank 3]
+Score        : 0.8196
+Chunk ID      : 97ba648b060f62cfadf8af3a36c8f2282fb8e0877dd34ea8505b8ad1d1b3c78c
+Source        : C:\Inceptez\git_local_tax\tax-filing-assistant\data\pdf\IRS_Publication15T.pdf
+Page          : 6
+Chunk No      : 5
+Total Chunks  : 10
+Content       :
+$226.90 added to wages for calculating income tax withholding isn’t reported on Form W -2 and doesn’t in- crease the income tax liability of the employee. Also, the $226.90 added to wages doesn’t affect the social security tax or Medicare tax liability of the employer or the em- ployee, or the FUTA tax liability of the employer. Supplemental wage payment. This procedure for deter- mining the amount of federal income tax withholding for nonresident alien employees doesn’t apply to a supple- menta
+
+---------- EVALUATION RESULT ----------
+Question ID       : gd_022
+Retrieval Success  : False
+Retrieved Count    : 3
+Top Score          : 0.8385
+Hit@3            : 0.0000
+Recall@3         : 0.0000
+MRR                : 0.0000
+Status             : RETRIEVAL_FAILED
+
+================================================================================
+Question ID : gd_023
+Query       : What is Form W-4P used for?
+================================================================================
+
+---------- RETRIEVAL RESULTS ----------
+
+[Rank 1]
+Score        : 0.7700
+Chunk ID      : 51385ec95d58a1f418e8323bdbe1732cbcd49a7ab0697a0cc7d24e1c11bc1c55
+Source        : C:\Inceptez\git_local_tax\tax-filing-assistant\data\pdf\IRS_Publication15T.pdf
+Page          : 8
+Chunk No      : 2
+Total Chunks  : 7
+Content       :
+Paper substitute forms must include the in- structions and worksheets for Form W -4P rather than pro- viding a web address to the instructions on . How To Treat 2021 and Earlier Forms W-4P as if They Were 2022 or Later Forms W-4P Payers may use an optional computational bridge to treat 2021 and earlier Forms W-4P as if they were 2022 or later Forms W -4P for purposes of figuring federal income tax withholding. This computational bridge can reduce system complexity by allowing payers to permanent
+
+[Rank 2]
+Score        : 0.7646
+Chunk ID      : 5d03d2b11e95d4317d35adc4e3b31b5cf65b1a280f16676e307b07e6bb7aa215
+Source        : C:\Inceptez\git_local_tax\tax-filing-assistant\data\pdf\IRS_Publication15T.pdf
+Page          : 7
+Chunk No      : 10
+Total Chunks  : 11
+Content       :
+account specifically tied to the payee, you need not require the payee to submit this personal infor- mation again when completing an electronic substitute, as long as the account where the election is being made is directly or indirectly linked to the electronically stored per- sonal information. Telephonic submissions of Form W -4P . Payers may provide for telephonic submissions of Form W -4P . Y ou must use a script that includes all portions of the first page of the paper Form W -4P from Ste
+
+[Rank 3]
+Score        : 0.7645
+Chunk ID      : 1a84319b6020628e74bc27ca077f16006d412af3f68693f46c609b4fdccb35e4
+Source        : C:\Inceptez\git_local_tax\tax-filing-assistant\data\pdf\IRS_Publication15T.pdf
+Page          : 8
+Chunk No      : 5
+Total Chunks  : 7
+Content       :
+on a 2021 or earlier Form W-4P . Enter $8,600 if the payee’s filing status is “Single or Married filing separately” or $12,900 if the payee’s filing status is “Married filing jointly.” 3. Multiply the number of allowances claimed on line 2 of a payee’s 2021 or earlier Form W-4P by $4,300 and enter the result in Step 4(b) on a 2022 or later Form W-4P . 4. Enter the additional amount of withholding requested by the payee on line 3 of their 2021 or earlier Form W-4P in Step 4(c) of a 2022 or later 
+
+---------- EVALUATION RESULT ----------
+Question ID       : gd_023
+Retrieval Success  : False
+Retrieved Count    : 3
+Top Score          : 0.7700
+Hit@3            : 0.0000
+Recall@3         : 0.0000
+MRR                : 0.0000
+Status             : RETRIEVAL_FAILED
+
+================================================================================
+Question ID : gd_024
+Query       : What happens when a payee checks No withholding on a 2026 or later Form W-4P?
+================================================================================
+
+---------- RETRIEVAL RESULTS ----------
+
+[Rank 1]
+Score        : 0.8333
+Chunk ID      : d37620604cdf9c99ddeb0965c8e672c83320fa07d0817af35e03a41afc3cc817
+Source        : C:\Inceptez\git_local_tax\tax-filing-assistant\data\pdf\IRS_Publication15T.pdf
+Page          : 6
+Chunk No      : 7
+Total Chunks  : 10
+Content       :
+withholding. Form W -4P contains 5 steps. Every Form W-4P payers receive from a payee in 2022 or later should show a completed Step 1 (name, address, SSN, and filing status) and a dated signature in Step 5. Payees complete Steps 2, 3, and/or 4 only if relevant to their personal situa- tions. Steps 2, 3, and 4 show adjustments that affect with- holding calculations. For payees completing one or more of Steps 2, 3, and/or 4 on a 2022 or later Form W-4P , adjustments are as follows. Step 2. If the 
+
+[Rank 2]
+Score        : 0.8308
+Chunk ID      : fe55e0e55287f62f3799684fe1ba90e3645510131dd87842d750484608840abe
+Source        : C:\Inceptez\git_local_tax\tax-filing-assistant\data\pdf\IRS_Publication15T.pdf
+Page          : 7
+Chunk No      : 4
+Total Chunks  : 11
+Content       :
+allowan- ces on a 2021 or earlier Form W-4P , tax will be withheld on a payment that is at least $2,690 per month. Choosing not to have income tax withheld. A payee who checks the box for “No withholding” on a 2026 or later Form W-4P below Step 4(c) shall have no federal income tax withheld from their periodic pension or annuity pay- ments. On a 2022 through 2025 Form W -4P , the payee would have made this election by writing “No Withholding” below Step 4(c). In the case of a payer that used the
+
+[Rank 3]
+Score        : 0.8299
+Chunk ID      : d101373fa19a882bd116b9e74c29f3d0aae381a41f9a76784f5d812bc4249639
+Source        : C:\Inceptez\git_local_tax\tax-filing-assistant\data\pdf\IRS_Publication15T.pdf
+Page          : 7
+Chunk No      : 3
+Total Chunks  : 11
+Content       :
+as if they had no entries on lines 1 and 3 and had completed line 2 indicat- ing a status of Single, and claiming zero allowances. If a payee received their first periodic pension or annuity pay- ment before 2022 and had failed to furnish a Form W -4P when those payments began, you must continue to with- hold on those periodic payments as if the recipient were married claiming three withholding allowances on a Form W-4P for 2021 or earlier, unless the payee furnishes a Form W-4P requesting a cha
+
+---------- EVALUATION RESULT ----------
+Question ID       : gd_024
+Retrieval Success  : False
+Retrieved Count    : 3
+Top Score          : 0.8333
+Hit@3            : 0.0000
+Recall@3         : 0.0000
+MRR                : 0.0000
+Status             : RETRIEVAL_FAILED
+
+================================================================================
+Question ID : gd_025
+Query       : What alternative methods can be used for figuring federal income tax withholding?
+================================================================================
+
+---------- RETRIEVAL RESULTS ----------
+
+[Rank 1]
+Score        : 0.8544
+Chunk ID      : 4b77a5a41e9eb0ab06cc405e15d22cad4af9497a82f7c84c21917cbd203a837f
+Source        : C:\Inceptez\git_local_tax\tax-filing-assistant\data\pdf\IRS_Publication15T.pdf
+Page          : 65
+Chunk No      : 1
+Total Chunks  : 10
+Content       :
+Fileid: … ation-15-t/2026/a/xml/cycle07/source 15:14 - 3-Dec-2025 The type and rule above prints on all proofs including departmental reproduction proofs. MUST be removed before printing. 6. Alternative Methods for Figuring Withholding Y ou may use various methods for figuring federal income tax withholding. The methods described next may be used instead of the Percentage Method and Wage Bracket Method discussed earlier in this publication. Use the method that best suits your payroll system and 
+
+[Rank 2]
+Score        : 0.8117
+Chunk ID      : 5bf17cfef505f83fc5b560c0818488761c866b5b899d19d63d5125b6a9591d76
+Source        : C:\Inceptez\git_local_tax\tax-filing-assistant\data\pdf\IRS_Publication15T.pdf
+Page          : 2
+Chunk No      : 4
+Total Chunks  : 9
+Content       :
+at /pub/irs-irbs/irb99-04.pdf. Introduction This publication supplements Pub. 15, Employer’s T ax Guide. It describes how to figure withholding using the Wage Bracket Method or Percentage Method, describes the alternative methods for figuring withholding, and pro- vides the T ables for Withholding on Distributions of Indian Gaming Profits to T ribal Members. Although this publication may be used in certain situa- tions to figure federal income tax withholding on supple- mental wages, the methods
+
+[Rank 3]
+Score        : 0.8045
+Chunk ID      : a5839ae8f88fe4c082f69a83ea52a9a56d0d4d10a3fd2680f973a31988bcbbdd
+Source        : C:\Inceptez\git_local_tax\tax-filing-assistant\data\pdf\IRS_Publication15T.pdf
+Page          : 65
+Chunk No      : 2
+Total Chunks  : 10
+Content       :
+of federal income tax withholding on the wages of nonresident alien employees. Before you use any of the alternative methods to figure the federal income tax withholding on the wages of nonresident alien employ- ees, see Withholding Adjustment for Nonresident Alien Employees, earlier. Annualized wages. The Percentage Method T ables for Automated Payroll Systems in section 1 and Worksheet 1A allow you to figure federal income tax withholding based on annualized wages. Average estimated wages. Y o
+
+---------- EVALUATION RESULT ----------
+Question ID       : gd_025
+Retrieval Success  : False
+Retrieved Count    : 3
+Top Score          : 0.8544
+Hit@3            : 0.0000
+Recall@3         : 0.0000
+MRR                : 0.0000
+Status             : RETRIEVAL_FAILED
+
+================================================================================
+Question ID : gd_026
+Query       : How does the cumulative wages method work?
+================================================================================
+
+---------- RETRIEVAL RESULTS ----------
+
+[Rank 1]
+Score        : 0.7884
+Chunk ID      : d70ee2ce4c265b7a6fcb8cc2b5853268bab1933e93835a4fd162661ee885b0d7
+Source        : C:\Inceptez\git_local_tax\tax-filing-assistant\data\pdf\IRS_Publication15T.pdf
+Page          : 65
+Chunk No      : 3
+Total Chunks  : 10
+Content       :
+with necessary adjustments, for any quarter. For details, see Regulations section 31.3402(h)(1)-1. Cumulative wages. An employee may ask you, in writ- ing, to withhold tax on cumulative wages. If you agree to do so, and you’ve paid the employee for the same kind of payroll period (weekly, biweekly, etc.) since the beginning of the year, you may figure the tax as follows. Add the wages you’ve paid the employee for the current calendar year to the current payroll period amount. Divide this amount 
+
+[Rank 2]
+Score        : 0.7616
+Chunk ID      : d2bca7f871c6cc5245d83fb2e4a20f48d309ac451cf1c08888465ce322b0b9cd
+Source        : C:\Inceptez\git_local_tax\tax-filing-assistant\data\pdf\IRS_Publication15T.pdf
+Page          : 65
+Chunk No      : 6
+Total Chunks  : 10
+Content       :
+by the part-year method. 1. Add the wages to be paid to the employee for the cur- rent payroll period to any wages that you’ve already paid to the employee in the current term of continuous employment. See the definition for “term of continu- ous employment,” later. 2. Add the number of payroll periods used in step 1 to the number of payroll periods between the employee’s last employment and current employment. T o find the number of periods between the last employment and current employment, di
+
+[Rank 3]
+Score        : 0.7482
+Chunk ID      : 8ce7c93e17feb1f786621046a9d2c07c374bdf959b4569cff08df2e7bbc89043
+Source        : C:\Inceptez\git_local_tax\tax-filing-assistant\data\pdf\IRS_Publication15T.pdf
+Page          : 65
+Chunk No      : 4
+Total Chunks  : 10
+Content       :
+Figure the withholding on this amount, and multiply the withholding by the num- ber of payroll periods so far this year, including the current period. Subtract the total tax already deducted and with- held during the calendar year from the total amount of tax calculated. The excess is the amount to withhold for the current payroll period. See Revenue Procedure 78 -8, 1978-1 C.B. 562, for an example of the cumulative method. Part-year employment. A part -year employee who fig- ures income tax on 
+
+---------- EVALUATION RESULT ----------
+Question ID       : gd_026
+Retrieval Success  : False
+Retrieved Count    : 3
+Top Score          : 0.7884
+Hit@3            : 0.0000
+Recall@3         : 0.0000
+MRR                : 0.0000
+Status             : RETRIEVAL_FAILED
+
+================================================================================
+Question ID : gd_027
+Query       : What is the IRS Tax Withholding Estimator used for according to Publication 15-T?
+================================================================================
+
+---------- RETRIEVAL RESULTS ----------
+
+[Rank 1]
+Score        : 0.8175
+Chunk ID      : 5bf17cfef505f83fc5b560c0818488761c866b5b899d19d63d5125b6a9591d76
+Source        : C:\Inceptez\git_local_tax\tax-filing-assistant\data\pdf\IRS_Publication15T.pdf
+Page          : 2
+Chunk No      : 4
+Total Chunks  : 9
+Content       :
+at /pub/irs-irbs/irb99-04.pdf. Introduction This publication supplements Pub. 15, Employer’s T ax Guide. It describes how to figure withholding using the Wage Bracket Method or Percentage Method, describes the alternative methods for figuring withholding, and pro- vides the T ables for Withholding on Distributions of Indian Gaming Profits to T ribal Members. Although this publication may be used in certain situa- tions to figure federal income tax withholding on supple- mental wages, the methods
+
+[Rank 2]
+Score        : 0.8043
+Chunk ID      : d1f6715391f764ad2e654fd770dff12c09c35193a01d0d61397b202cb9332c0c
+Source        : C:\Inceptez\git_local_tax\tax-filing-assistant\data\pdf\IRS_Publication15T.pdf
+Page          : 1
+Chunk No      : 7
+Total Chunks  : 11
+Content       :
+and 1099-NEC) with the SSA or IRS, as applicable, and fur- nish statements to overtime recipients showing qualified overtime compensation paid during the year. However, the IRS has provided transition relief to employers and payers for the tax year 2025 reporting requirements. For more in- formation, see Notice 2025-62. Reminders IRS Tax Withholding Estimator. Employees and payees may use the IRS T ax Withholding Estimator, available at /W4App, when completing their Form W -4 or their Form W-4P 
+
+[Rank 3]
+Score        : 0.7677
+Chunk ID      : c132eaf08d0c90559cfb4425fe62f7f73ca0217cbb9cf727674b1793bd67b5c1
+Source        : C:\Inceptez\git_local_tax\tax-filing-assistant\data\pdf\IRS_Publication15T.pdf
+Page          : 6
+Chunk No      : 8
+Total Chunks  : 10
+Content       :
+or later Form W-4P in Worksheet 1B to figure income tax withholding. Tip: Consider advising payees to use the IRS T ax Withholding Estimator, available at /W4App, when completing Form W -4P if they are submitting Form W -4P after the beginning of the year; have social security, divi- dend, capital gain, or business income; receive these pay- ments or pension and annuity payments for only part of the year; are subject to the Additional Medicare T ax or Net Investment Income T ax; or have changes 
+
+---------- EVALUATION RESULT ----------
+Question ID       : gd_027
+Retrieval Success  : False
+Retrieved Count    : 3
+Top Score          : 0.8175
+Hit@3            : 0.0000
+Recall@3         : 0.0000
+MRR                : 0.0000
+Status             : RETRIEVAL_FAILED
+
+================================================================================
+Question ID : gd_028
+Query       : What is the purpose of the 2019 and earlier Form W-4 computational bridge?
+================================================================================
+
+---------- RETRIEVAL RESULTS ----------
+
+[Rank 1]
+Score        : 0.8232
+Chunk ID      : e755f68d008da2639ee516ab0635824437d1a26044ad7d55767b7ba6dfed1d0c
+Source        : C:\Inceptez\git_local_tax\tax-filing-assistant\data\pdf\IRS_Publication15T.pdf
+Page          : 1
+Chunk No      : 10
+Total Chunks  : 11
+Content       :
+W-4P as if They Were 2022 or Later Forms W -4P, later, for an optional computational bridge. For more information about Form W -4R, see section 8 of Pub. 15-A, Employer’s Supplemental T ax Guide. Computational bridge for Form W -4. Employers may use an optional computational bridge to treat 2019 and earlier Forms W-4 as if they were 2020 or later Forms W -4 for purposes of figuring federal income tax withholding. See How T o T reat 2019 and Earlier Forms W-4 as if They Were 2020 or Later Forms W
+
+[Rank 2]
+Score        : 0.8115
+Chunk ID      : 714110eb3efa52276882f407571f93bf831f620029770fb73869279c171ddadf
+Source        : C:\Inceptez\git_local_tax\tax-filing-assistant\data\pdf\IRS_Publication15T.pdf
+Page          : 8
+Chunk No      : 6
+Total Chunks  : 7
+Content       :
+and any other instructions on Worksheet 1B that reference a 2021 or earlier Form W-4P . Caution: This computational bridge applies only to Forms W-4P (including default elections) that were in ef- fect on or before December 31, 2021, and that continue in effect because a payee didn’t submit a 2022 or later Form W-4P . If a payee chooses to submit a new Form W -4P , it doesn’t change the general requirement that the payee must use the current year’s revision of Form W -4P . Upon putting in effect
+
+[Rank 3]
+Score        : 0.8028
+Chunk ID      : 80305fe3fef3c606332eec196e89be9594a57e2ad9dadbe88b01056fb16fa070
+Source        : C:\Inceptez\git_local_tax\tax-filing-assistant\data\pdf\IRS_Publication15T.pdf
+Page          : 4
+Chunk No      : 9
+Total Chunks  : 10
+Content       :
+a web address where the payee can find them on . Employers are prohibited from accepting a substitute form developed by an employee, and an employee fur- nishing such form must be treated as failing to furnish a Form W-4. How To Treat 2019 and Earlier Forms W-4 as if They Were 2020 or Later Forms W-4 Employers may use an optional computational bridge to treat 2019 and earlier Forms W -4 as if they were 2020 or later Forms W -4 for purposes of figuring federal income tax withholding. This computa
+
+---------- EVALUATION RESULT ----------
+Question ID       : gd_028
+Retrieval Success  : False
+Retrieved Count    : 3
+Top Score          : 0.8232
+Hit@3            : 0.0000
+Recall@3         : 0.0000
+MRR                : 0.0000
+Status             : RETRIEVAL_FAILED
+
+================================================================================
+Question ID : gd_029
+Query       : What special rule applies when converting a nonresident alien employee's 2019 or earlier Form W-4 using the computational bridge?
+================================================================================
+
+---------- RETRIEVAL RESULTS ----------
+
+[Rank 1]
+Score        : 0.8350
+Chunk ID      : 536d7eb217878e4aeffc24ca03c3c7ce928464f4eabd8e21d0f2bb313d72ba49
+Source        : C:\Inceptez\git_local_tax\tax-filing-assistant\data\pdf\IRS_Publication15T.pdf
+Page          : 5
+Chunk No      : 5
+Total Chunks  : 9
+Content       :
+applicable before 2020. For more information about lock -in letters, see sec- tion 9 of Pub. 15. For lock -in letters based on 2019 or ear- lier Forms W -4, you may use this optional computational bridge to comply with the requirement to withhold based on the maximum withholding allowances and filing status permitted in the lock-in letter. Nonresident alien employees. Y ou may use this com- putational bridge to convert a nonresident alien employ- ee’s 2019 or earlier Form W -4 to a 2020 or later
+
+[Rank 2]
+Score        : 0.8285
+Chunk ID      : 80305fe3fef3c606332eec196e89be9594a57e2ad9dadbe88b01056fb16fa070
+Source        : C:\Inceptez\git_local_tax\tax-filing-assistant\data\pdf\IRS_Publication15T.pdf
+Page          : 4
+Chunk No      : 9
+Total Chunks  : 10
+Content       :
+a web address where the payee can find them on . Employers are prohibited from accepting a substitute form developed by an employee, and an employee fur- nishing such form must be treated as failing to furnish a Form W-4. How To Treat 2019 and Earlier Forms W-4 as if They Were 2020 or Later Forms W-4 Employers may use an optional computational bridge to treat 2019 and earlier Forms W -4 as if they were 2020 or later Forms W -4 for purposes of figuring federal income tax withholding. This computa
+
+[Rank 3]
+Score        : 0.8117
+Chunk ID      : e755f68d008da2639ee516ab0635824437d1a26044ad7d55767b7ba6dfed1d0c
+Source        : C:\Inceptez\git_local_tax\tax-filing-assistant\data\pdf\IRS_Publication15T.pdf
+Page          : 1
+Chunk No      : 10
+Total Chunks  : 11
+Content       :
+W-4P as if They Were 2022 or Later Forms W -4P, later, for an optional computational bridge. For more information about Form W -4R, see section 8 of Pub. 15-A, Employer’s Supplemental T ax Guide. Computational bridge for Form W -4. Employers may use an optional computational bridge to treat 2019 and earlier Forms W-4 as if they were 2020 or later Forms W -4 for purposes of figuring federal income tax withholding. See How T o T reat 2019 and Earlier Forms W-4 as if They Were 2020 or Later Forms W
+
+---------- EVALUATION RESULT ----------
+Question ID       : gd_029
+Retrieval Success  : False
+Retrieved Count    : 3
+Top Score          : 0.8350
+Hit@3            : 0.0000
+Recall@3         : 0.0000
+MRR                : 0.0000
+Status             : RETRIEVAL_FAILED
+
+================================================================================
+Question ID : gd_030
+Query       : What must an electronic Form W-4 system provide for nonresident alien status?
+================================================================================
+
+---------- RETRIEVAL RESULTS ----------
+
+[Rank 1]
+Score        : 0.8173
+Chunk ID      : 5161a875c2a52814251972c30efe390f043fac71f900d3db1d9d613dce845834
+Source        : C:\Inceptez\git_local_tax\tax-filing-assistant\data\pdf\IRS_Publication15T.pdf
+Page          : 4
+Chunk No      : 1
+Total Chunks  : 10
+Content       :
+Fileid: … ation-15-t/2026/a/xml/cycle07/source 15:14 - 3-Dec-2025 The type and rule above prints on all proofs including departmental reproduction proofs. MUST be removed before printing. from their payments. The electronic checkbox must in- clude the text used on Form W -4 but also stipulate both conditions that must be met for exemption or link directly to the conditions on page 2 of Form W-4. Field required for nonresident alien status. Y ou must provide a field for nonresident aliens to ente
+
+[Rank 2]
+Score        : 0.8095
+Chunk ID      : 32c2ccc72aac53b08833cbe44bd660994ba44526f0128ecfd91ffe3cb6929761
+Source        : C:\Inceptez\git_local_tax\tax-filing-assistant\data\pdf\IRS_Publication15T.pdf
+Page          : 5
+Chunk No      : 7
+Total Chunks  : 9
+Content       :
+mental Form W -4 Instructions for Nonresident Aliens, be- fore completing Form W-4. Apply the procedure discussed next to figure the amount of federal income tax to withhold from the wages of nonresident alien employees performing services within the United States. This procedure only applies to nonresident alien em- ployees who have wages subject to income tax withhold- ing. Caution: Nonresident alien students from India and business apprentices from India aren’t subject to this pro- cedure. In
+
+[Rank 3]
+Score        : 0.8060
+Chunk ID      : ad6a7582e688abe25fa14686f53600af64f6a71977d1875b4ee7266aecd3b46c
+Source        : C:\Inceptez\git_local_tax\tax-filing-assistant\data\pdf\IRS_Publication15T.pdf
+Page          : 1
+Chunk No      : 11
+Total Chunks  : 11
+Content       :
+. Y ou may set up a system to electronically receive Form W -4 or Form W-4P from an employee or payee. For each form that you establish an electronic submis- sion system for, you must meet each of the following five requirements. 1. The electronic system must ensure that the informa- tion received by you is the information sent by the em- ployee or payee. The system must document all occa- sions of user access that result in a submission. In addition, the design and operation of the electronic s
+
+---------- EVALUATION RESULT ----------
+Question ID       : gd_030
+Retrieval Success  : False
+Retrieved Count    : 3
+Top Score          : 0.8173
+Hit@3            : 0.0000
+Recall@3         : 0.0000
+MRR                : 0.0000
+Status             : RETRIEVAL_FAILED
+
+================================================================================
+FINAL RETRIEVAL EVALUATION SUMMARY
+================================================================================
+Total Questions       : 30
+Successful Retrieval  : 0
+Failed Retrieval      : 30
+
+Retrieval Success Rate : 0.00%
+Average Hit@3      : 0.0000
+Average Recall@3   : 0.0000
+MRR                     : 0.0000
+================================================================================
