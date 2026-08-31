@@ -4,22 +4,16 @@ from langchain_core.documents import Document
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from config import CHUNK_MIN_SIZE,CHUNK_SIZE,CHUNK_OVERLAP
 from utils.logger import logging
-import hashlib
 
 logger = logging.getLogger(__name__)
 
 class RecursiveChunker(BaseChunker):
-    def generate_chunk_id(self, source: str, page: int, chunk_number: int,content: str) -> str:
-        normalized_content=content.strip()
-        identity = (
-                f"{source}|"
-                f"{page}|"
-                f"{chunk_number}|"
-                f"{normalized_content}"
-                  )
-        return hashlib.sha256(
-            identity.encode("utf-8")
-        ).hexdigest()
+    def __init__(self, chunk_size: int = CHUNK_SIZE, chunk_overlap: int = CHUNK_OVERLAP):
+        # Overridable so callers (e.g. the comparison UI) can try
+        # different chunk_size/chunk_overlap values without touching
+        # config.py; defaults preserve today's no-arg behavior.
+        self.chunk_size = chunk_size
+        self.chunk_overlap = chunk_overlap
 
     def chunk(self,documents:List[Document]) -> List[Document]:
         if len(documents) == 0:
@@ -28,10 +22,10 @@ class RecursiveChunker(BaseChunker):
         chunks=[]
 
         splitter=RecursiveCharacterTextSplitter(
-                chunk_size=CHUNK_SIZE,
-                chunk_overlap=CHUNK_OVERLAP
+                chunk_size=self.chunk_size,
+                chunk_overlap=self.chunk_overlap
         )
-        
+
         for doc in documents:
             if len(doc.page_content) == 0:
                 continue
@@ -59,15 +53,7 @@ class RecursiveChunker(BaseChunker):
                     chunk.metadata['total_chunks'] = len(chunks_intermediate)
                     chunk.metadata['chunk_id'] = self.generate_chunk_id(
                         source,
-                        page,
-                        chunk_number,
                         chunk.page_content)
                     chunks.append(chunk)
                     #Log the summary
         return chunks
-            
-
-
-        
-
-

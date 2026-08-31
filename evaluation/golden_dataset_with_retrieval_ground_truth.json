@@ -69,7 +69,7 @@
     {
       "id": "gd_004",
       "query": "What information does an employee provide on Form W-4 from 2020 or later?",
-      "expected_answer": "Beginning with the 2020 Form W-4, employees no longer request withholding adjustments using withholding allowances. Instead, they provide amounts to increase or decrease the amount of taxes withheld and amounts to increase or decrease the amount of wage income subject to income tax withholding.",
+      "expected_answer": "Beginning with the 2020 Form W-4, employees no longer use withholding allowances. Instead, they provide amounts to increase or decrease the taxes withheld and the amount of wage income subject to income tax withholding. On the form itself, employees complete Step 1 (name, address, SSN, and filing status) and a dated signature in Step 5, completing Steps 2, 3, and/or 4 only if relevant to their personal situation.",
       "source_section": "Form W-4",
       "source_page": 3,
       "evaluation": {
@@ -79,7 +79,8 @@
           "no longer",
           "withholding allowances",
           "increase or decrease",
-          "taxes withheld"
+          "taxes withheld",
+          "Step 1"
         ]
       },
       "retrieval_ground_truth": {
@@ -220,7 +221,7 @@
     {
       "id": "gd_011",
       "query": "What is the difference between the Percentage Method and Wage Bracket Method?",
-      "expected_answer": "Publication 15-T provides both Percentage Method and Wage Bracket Method tables. The Wage Bracket Method is used for manual payroll systems and has tables organized by wage ranges, filing status, payroll period, and withholding choices. The publication also provides Percentage Method tables for automated and manual payroll systems.",
+      "expected_answer": "The Percentage Method works for any amount of wages and has tables for both automated and manual payroll systems. The Wage Bracket Method is limited to annual wages generally less than $100,000 and is designed for manual payroll systems, using tables organized by wage range, filing status, and payroll period.",
       "source_section": "Withholding Methods",
       "source_page": 1,
       "evaluation": {
@@ -229,8 +230,8 @@
         "answer_must_contain": [
           "Percentage Method",
           "Wage Bracket Method",
-          "manual payroll",
-          "automated payroll"
+          "any amount of wages",
+          "$100,000"
         ]
       },
       "retrieval_ground_truth": {

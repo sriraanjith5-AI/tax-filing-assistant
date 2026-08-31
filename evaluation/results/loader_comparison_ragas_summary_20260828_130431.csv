@@ -1,0 +1,2 @@
+loader,avg_context_precision,avg_context_recall,avg_faithfulness,avg_answer_relevancy,avg_answer_correctness
+pypdf,0.9195485323527094,1.0,0.8738888888888888,0.9492498463498055,0.7358682521400335
