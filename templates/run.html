@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Run {{ run_id }}</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<nav class="topnav">
+  <a class="brand" href="/">Tax Filing Assistant</a>
+  <a class="navlink" href="/ask">Ask a question</a>
+  <a class="navlink active" href="/">Compare retrievers</a>
+</nav>
+
+<div class="page">
+  <h1>Run {{ run_id }}</h1>
+  <p class="subtitle">Status: <span id="status" class="status-{{ run.status if run else 'pending' }}">{{ run.status if run else "pending" }}</span></p>
+
+  <div id="results">
+  {% if run and run.status == "done" %}
+    <h2>Classical metrics</h2>
+    <div class="card">
+    <table class="metrics-table">
+      {% for key, value in run.classical_metrics.items() %}
+      <tr><th>{{ key }}</th><td>{{ "%.4f"|format(value) }}</td></tr>
+      {% endfor %}
+    </table>
+    </div>
+    {% if run.ragas_metrics %}
+    <h2>Ragas retrieval metrics</h2>
+    <div class="card">
+    <table class="metrics-table">
+      {% for key, value in run.ragas_metrics.items() %}
+      <tr><th>{{ key }}</th><td>{{ "%.4f"|format(value) }}</td></tr>
+      {% endfor %}
+    </table>
+    </div>
+    {% endif %}
+    {% if run.generation_metrics %}
+    <h2>Generation metrics</h2>
+    <div class="card">
+    <table class="metrics-table">
+      {% for key, value in run.generation_metrics.items() %}
+      <tr><th>{{ key }}</th><td>{{ "%.4f"|format(value) }}</td></tr>
+      {% endfor %}
+    </table>
+    </div>
+    {% endif %}
+    {% if run.sample_answers %}
+    <h2>Sample answers</h2>
+    {% for qa in run.sample_answers %}
+    <div class="qa-card">
+      <div class="label">Query</div>
+      <div>{{ qa.query }}</div>
+      <div class="label" style="margin-top:0.5rem">Generated answer</div>
+      <div>{{ qa.answer }}</div>
+      <div class="label" style="margin-top:0.5rem">Expected answer</div>
+      <div>{{ qa.expected_answer }}</div>
+    </div>
+    {% endfor %}
+    {% endif %}
+    <p class="hint-text">Avg latency: {{ "%.1f"|format(run.avg_latency_ms) }} ms</p>
+  {% elif run and run.status == "failed" %}
+    <h2>Error</h2>
+    <pre class="error-pre">{{ run.error }}</pre>
+  {% endif %}
+  </div>
+
+  <a class="back-link" href="/">&larr; Back to comparison</a>
+</div>
+
+<script>
+  const statusEl = document.getElementById("status");
+  const resultsEl = document.getElementById("results");
+
+  function esc(text) {
+    const div = document.createElement("div");
+    div.textContent = text;
+    return div.innerHTML;
+  }
+
+  function metricsTable(title, metrics) {
+    let html = `<h2>${esc(title)}</h2><div class="card"><table class="metrics-table">`;
+    for (const [k, v] of Object.entries(metrics)) {
+      html += `<tr><th>${esc(k)}</th><td>${v.toFixed(4)}</td></tr>`;
+    }
+    return html + "</table></div>";
+  }
+
+  function render(run) {
+    statusEl.textContent = run.status;
+    statusEl.className = "status-" + run.status;
+
+    if (run.status === "done") {
+      let html = metricsTable("Classical metrics", run.classical_metrics || {});
+      if (run.ragas_metrics) {
+        html += metricsTable("Ragas retrieval metrics", run.ragas_metrics);
+      }
+      if (run.generation_metrics) {
+        html += metricsTable("Generation metrics", run.generation_metrics);
+      }
+      if (run.sample_answers && run.sample_answers.length) {
+        html += "<h2>Sample answers</h2>";
+        for (const qa of run.sample_answers) {
+          html += `<div class="qa-card">
+            <div class="label">Query</div><div>${esc(qa.query)}</div>
+            <div class="label" style="margin-top:0.5rem">Generated answer</div><div>${esc(qa.answer)}</div>
+            <div class="label" style="margin-top:0.5rem">Expected answer</div><div>${esc(qa.expected_answer)}</div>
+          </div>`;
+        }
+      }
+      html += `<p class="hint-text">Avg latency: ${run.avg_latency_ms.toFixed(1)} ms</p>`;
+      resultsEl.innerHTML = html;
+    } else if (run.status === "failed") {
+      resultsEl.innerHTML = `<h2>Error</h2><pre class="error-pre">${esc(run.error)}</pre>`;
+    }
+  }
+
+  async function poll() {
+    const resp = await fetch(`/runs/{{ run_id }}/status`);
+    if (!resp.ok) return;
+    const run = await resp.json();
+    render(run);
+    if (run.status === "pending" || run.status === "running") {
+      setTimeout(poll, 2000);
+    }
+  }
+
+  {% if not run or run.status in ("pending", "running") %}
+  poll();
+  {% endif %}
+</script>
+</body>
+</html>

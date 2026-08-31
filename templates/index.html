@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Retrieval Comparison</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<nav class="topnav">
+  <a class="brand" href="/">Tax Filing Assistant</a>
+  <a class="navlink" href="/ask">Ask a question</a>
+  <a class="navlink active" href="/">Compare retrievers</a>
+</nav>
+
+<div class="page">
+  <h1>Chunking / Vector Store / Retriever Comparison</h1>
+  <p class="subtitle">Build an index with a given config and score it against the golden dataset.</p>
+
+  {% if best_run %}
+  <div class="callout success">
+    <strong>Best so far</strong> (NDCG@10 = {{ "%.4f"|format(best_run.ndcg_at_10) }}):
+    chunker=<code>{{ best_run.chunker }}</code>,
+    chunk_size=<code>{{ best_run.chunk_size }}</code>,
+    chunk_overlap=<code>{{ best_run.chunk_overlap }}</code>,
+    vector_store=<code>{{ best_run.vector_store }}</code>,
+    retriever=<code>{{ best_run.retriever }}</code>
+  </div>
+  {% endif %}
+
+  <div class="card">
+    <form action="/runs" method="post" id="run-form">
+      <fieldset>
+        <legend>PDF parsing</legend>
+        <div class="field-grid">
+          <label>Loader
+            <select name="loader" id="loader-select">
+              {% for l in loaders %}<option value="{{ l }}">{{ l }}</option>{% endfor %}
+            </select>
+          </label>
+        </div>
+        <p class="hint-text">
+          pypdf is fastest; pymupdf4llm/pdfplumber/unstructured parse more carefully
+          (headings, tables, layout) at extra ingest cost - see
+          evaluation/results/loader_comparison_*.csv for the measured tradeoff.
+        </p>
+      </fieldset>
+
+      <fieldset>
+        <legend>Chunking</legend>
+        <div class="field-grid">
+          <label>Chunker
+            <select name="chunker" id="chunker-select">
+              {% for c in chunkers %}<option value="{{ c }}">{{ c }}</option>{% endfor %}
+            </select>
+          </label>
+          <label>Chunk size
+            <input type="number" name="chunk_size" id="chunk-size-input" value="{{ default_chunk_size }}" min="50">
+          </label>
+          <label>Chunk overlap
+            <input type="number" name="chunk_overlap" id="chunk-overlap-input" value="{{ default_chunk_overlap }}" min="0">
+          </label>
+        </div>
+        <p class="hint-text" id="semantic-hint" style="display:none">
+          chunk_size/chunk_overlap don't apply to the semantic chunker - they'll be ignored.
+        </p>
+      </fieldset>
+
+      <fieldset>
+        <legend>Storage &amp; retrieval</legend>
+        <div class="field-grid">
+          <label>Vector store
+            <select name="vector_store">
+              {% for v in vector_stores %}<option value="{{ v }}">{{ v }}</option>{% endfor %}
+            </select>
+          </label>
+          <label>Retriever
+            <select name="retriever">
+              {% for r in retrievers %}<option value="{{ r }}" {% if r == "hybrid_reranked_expanded" %}selected{% endif %}>{{ r }}</option>{% endfor %}
+            </select>
+          </label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Extra scoring (needs OPENAI_API_KEY)</legend>
+        <div class="check-row">
+          <input type="checkbox" name="include_ragas" id="include_ragas" value="true">
+          <label for="include_ragas" style="font-weight:400">
+            Include ragas LLM-judged retrieval metrics
+            <span class="hint">Context precision + recall, judged by an LLM instead of exact-text matching.</span>
+          </label>
+        </div>
+        <div class="check-row">
+          <input type="checkbox" name="include_generation" id="include_generation" value="true">
+          <label for="include_generation" style="font-weight:400">
+            Generate answers + score faithfulness/relevancy/correctness
+            <span class="hint">Runs the full generation step per question - slower.</span>
+          </label>
+        </div>
+      </fieldset>
+
+      <button type="submit">Run comparison</button>
+    </form>
+  </div>
+
+  <h2>Run history</h2>
+  {% if history_rows %}
+  <div class="table-wrap">
+  <table id="history-table">
+    <thead>
+      <tr>{% for col in history_columns %}<th onclick="sortTable({{ loop.index0 }})">{{ col }}</th>{% endfor %}</tr>
+    </thead>
+    <tbody>
+      {% for row in history_rows %}
+      <tr>{% for col in history_columns %}<td>{{ row[col] }}</td>{% endfor %}</tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  </div>
+  {% else %}
+  <p class="hint-text">No runs recorded yet.</p>
+  {% endif %}
+</div>
+
+<script>
+  const chunkerSelect = document.getElementById("chunker-select");
+  const chunkSizeInput = document.getElementById("chunk-size-input");
+  const chunkOverlapInput = document.getElementById("chunk-overlap-input");
+  const semanticHint = document.getElementById("semantic-hint");
+
+  function toggleChunkFields() {
+    const isSemantic = chunkerSelect.value === "semantic";
+    chunkSizeInput.disabled = isSemantic;
+    chunkOverlapInput.disabled = isSemantic;
+    semanticHint.style.display = isSemantic ? "block" : "none";
+  }
+  chunkerSelect.addEventListener("change", toggleChunkFields);
+  toggleChunkFields();
+
+  function sortTable(colIndex) {
+    const table = document.getElementById("history-table");
+    const tbody = table.tBodies[0];
+    const rows = Array.from(tbody.rows);
+    const asc = table.dataset.sortCol == colIndex && table.dataset.sortDir !== "asc";
+    rows.sort((a, b) => {
+      const av = a.cells[colIndex].innerText, bv = b.cells[colIndex].innerText;
+      const an = parseFloat(av), bn = parseFloat(bv);
+      const cmp = (!isNaN(an) && !isNaN(bn)) ? an - bn : av.localeCompare(bv);
+      return asc ? cmp : -cmp;
+    });
+    rows.forEach(r => tbody.appendChild(r));
+    table.dataset.sortCol = colIndex;
+    table.dataset.sortDir = asc ? "asc" : "desc";
+  }
+</script>
+</body>
+</html>

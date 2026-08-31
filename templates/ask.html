@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Ask - Tax Filing Assistant</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<nav class="topnav">
+  <a class="brand" href="/">Tax Filing Assistant</a>
+  <a class="navlink active" href="/ask">Ask a question</a>
+  <a class="navlink" href="/">Compare retrievers</a>
+</nav>
+
+<div class="page">
+  <h1>Ask a tax filing question</h1>
+  <p class="subtitle">
+    Answers are generated only from the ingested IRS documents, using the
+    project's best-measured retrieval config (hybrid BM25 + embedding
+    search, cross-encoder reranked, then context-expanded).
+  </p>
+
+  <div class="card">
+    <form action="/ask" method="post">
+      <label for="query">Your question</label>
+      <textarea
+        id="query"
+        name="query"
+        rows="3"
+        placeholder="e.g. What is Form W-4P used for?"
+        required
+      >{{ query or "" }}</textarea>
+      <p class="hint-text">&nbsp;</p>
+      <button type="submit">Ask</button>
+    </form>
+  </div>
+
+  {% if error %}
+  <div class="callout error">
+    <strong>Couldn't answer that.</strong> {{ error }}
+  </div>
+  {% endif %}
+
+  {% if result %}
+  <div class="answer-card">
+    <div class="label">Answer</div>
+    <div>{{ result.answer_html | safe }}</div>
+  </div>
+  <p class="hint-text">Bracketed page references like [p.7] link to the source excerpt from that page - see "Sources" below.</p>
+
+  <div class="meta-row">
+    <span>Retrieval: {{ "%.0f"|format(result.retrieval_latency_ms) }} ms</span>
+    <span>Generation: {{ "%.0f"|format(result.generation_latency_ms) }} ms</span>
+    <span>{{ result.retrieved_chunks|length }} source chunk(s)</span>
+    <span title="Full per-stage breakdown in logs/retrieval_traces.jsonl">trace {{ result.request_id }}</span>
+  </div>
+
+  <h2>Sources</h2>
+  {% set ns = namespace(seen_pages=[]) %}
+  {% for chunk in result.retrieved_chunks %}
+  {% set is_first_for_page = chunk.page_display is not none and chunk.page_display not in ns.seen_pages %}
+  {% if chunk.page_display is not none and is_first_for_page %}{% set ns.seen_pages = ns.seen_pages + [chunk.page_display] %}{% endif %}
+  <div class="source-card" {% if is_first_for_page %}id="source-p{{ chunk.page_display }}"{% endif %}>
+    <div class="source-head">
+      {% if chunk.page_display is not none %}<span class="badge cite-badge">[p.{{ chunk.page_display }}]</span>{% endif %}
+      <span class="badge">{{ chunk.source }}{% if chunk.page_display is not none %} &middot; p.{{ chunk.page_display }}{% endif %}</span>
+      <span class="badge">score {{ "%.3f"|format(chunk.score) }}</span>
+      {% if chunk.expanded %}<span class="badge expanded">context expanded</span>{% endif %}
+    </div>
+    <div class="source-text">{{ chunk.text }}</div>
+  </div>
+  {% endfor %}
+  {% endif %}
+</div>
+</body>
+</html>
