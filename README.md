@@ -15,19 +15,19 @@ If you just want to run it, skip to [Running It Yourself](#running-it-yourself).
 1. [The One-Paragraph Version](#the-one-paragraph-version)
 2. [What Problem Is This Solving?](#what-problem-is-this-solving)
 3. [The Librarian Analogy](#the-librarian-analogy)
-4. [Step 1 — Reading the PDF (Ingestion)](#step-1--reading-the-pdf-ingestion)
-5. [Step 2 — Cutting It Into Pieces (Chunking)](#step-2--cutting-it-into-pieces-chunking)
-6. [Step 3 — Embeddings and the Vector Store](#step-3--embeddings-and-the-vector-store)
-7. [Step 4 — Finding the Right Pieces (Retrieval)](#step-4--finding-the-right-pieces-retrieval)
-8. [Step 5 — Double-Checking the Results (Reranking)](#step-5--double-checking-the-results-reranking)
-9. [Step 6 — Not Cutting Off Mid-Sentence (Context Expansion)](#step-6--not-cutting-off-mid-sentence-context-expansion)
-10. [Step 7 — Writing the Answer (Generation)](#step-7--writing-the-answer-generation)
-11. [Step 8 — Proving It, Not Just Claiming It (Citations)](#step-8--proving-it-not-just-claiming-it-citations)
-12. [Step 9 — How Do You Know Any of This Actually Works? (Evaluation)](#step-9--how-do-you-know-any-of-this-actually-works-evaluation)
-13. [Step 10 — Watching It Think (Retrieval Tracing)](#step-10--watching-it-think-retrieval-tracing)
-14. [Case Studies: The Bugs That Taught Us the Most](#case-studies-the-bugs-that-taught-us-the-most)
-15. [Architecture Diagram](#architecture-diagram)
-16. [Project Layout](#project-layout)
+4. [Architecture Diagram](#architecture-diagram)
+5. [Project Layout](#project-layout)
+6. [Step 1 — Reading the PDF (Ingestion)](#step-1--reading-the-pdf-ingestion)
+7. [Step 2 — Cutting It Into Pieces (Chunking)](#step-2--cutting-it-into-pieces-chunking)
+8. [Step 3 — Embeddings and the Vector Store](#step-3--embeddings-and-the-vector-store)
+9. [Step 4 — Finding the Right Pieces (Retrieval)](#step-4--finding-the-right-pieces-retrieval)
+10. [Step 5 — Double-Checking the Results (Reranking)](#step-5--double-checking-the-results-reranking)
+11. [Step 6 — Not Cutting Off Mid-Sentence (Context Expansion)](#step-6--not-cutting-off-mid-sentence-context-expansion)
+12. [Step 7 — Writing the Answer (Generation)](#step-7--writing-the-answer-generation)
+13. [Step 8 — Proving It, Not Just Claiming It (Citations)](#step-8--proving-it-not-just-claiming-it-citations)
+14. [Step 9 — How Do You Know Any of This Actually Works? (Evaluation)](#step-9--how-do-you-know-any-of-this-actually-works-evaluation)
+15. [Step 10 — Watching It Think (Retrieval Tracing)](#step-10--watching-it-think-retrieval-tracing)
+16. [Case Studies: The Bugs That Taught Us the Most](#case-studies-the-bugs-that-taught-us-the-most)
 17. [Running It Yourself](#running-it-yourself)
 18. [Glossary](#glossary)
 
@@ -84,6 +84,87 @@ when you ask them a question:
 | Evaluation | Having a supervisor spot-check the librarian's answers against a known-correct answer key, regularly, to catch bad habits early |
 
 Keep this table in mind — every section below is one row of it, in detail.
+
+---
+
+## Architecture Diagram
+
+The same pipeline as the table above, but as a flow — this is worth
+glancing at before diving into the step-by-step sections below, and worth
+coming back to as a map while reading them.
+
+```mermaid
+flowchart TD
+    subgraph ingest["1 · INGESTION (one-time, per document)"]
+        A[PDF file] --> B["Loader<br/>(pypdf)"]
+        B --> C["Cleaners<br/>(strip headers/footers)"]
+        C --> D["Chunker<br/>(700 chars, 120 overlap)"]
+        D --> E["Embedder<br/>(BAAI/bge-small-en-v1.5)"]
+        E --> F[("Vector Store<br/>ChromaDB")]
+    end
+
+    subgraph retrieve["2 · RETRIEVAL (every question)"]
+        G[User question] --> H["Vector search<br/>(meaning-based)"]
+        G --> I["BM25 search<br/>(keyword-based)"]
+        F -.-> H
+        H --> J["Fuse rankings<br/>(RRF)"]
+        I --> J
+        J --> K["Cross-encoder<br/>reranking (top 15 → top 5)"]
+        K --> L["Context expansion<br/>(merge ±1 neighbor chunk)"]
+    end
+
+    subgraph generate["3 · GENERATION"]
+        L --> M["Build prompt<br/>(numbered, page-tagged excerpts)"]
+        M --> N["GPT-4o-mini<br/>(temperature 0)"]
+        N --> O["Answer with [p.N]<br/>citations"]
+    end
+
+    subgraph evaluate["4 · EVALUATION (offline, every pipeline change)"]
+        P["30 golden-dataset<br/>questions"] --> Q["Classical metrics<br/>Recall@K · MRR · NDCG"]
+        P --> R["RAGAS metrics<br/>(LLM-judged)"]
+    end
+
+    subgraph trace["5 · TRACING (every live question)"]
+        S["Every stage above<br/>records its candidates/scores"] --> T[("logs/retrieval_traces.jsonl<br/>one JSON line per question")]
+    end
+
+    H -.-> S
+    I -.-> S
+    J -.-> S
+    K -.-> S
+    L -.-> S
+    N -.-> S
+```
+
+---
+
+## Project Layout
+
+```
+ingestion/       Loading PDFs, cleaning text, building the vector index
+chunking/        Splitting documents into chunks (recursive / semantic)
+embedding/       Wraps the embedding model
+vectorstore/     ChromaDB / FAISS / in-memory storage backends
+retrieval/       Vector search, BM25, hybrid fusion, reranking, context
+                 expansion, and the live /ask pipeline
+llm/             The answer-generation model wrapper
+cleaners/        Header/footer/whitespace cleanup for extracted PDF text
+evaluation/      The 30-question golden dataset, classical + RAGAS scoring,
+                 and the full history of what was tried and measured
+                 (RETRIEVAL_EVALUATION_JOURNAL.md is worth reading in full)
+utils/           Logging setup, and the per-request retrieval tracer
+                 (utils/trace.py — see Step 10) that writes to logs/
+logs/            Per-request trace files (git-ignored, generated locally —
+                 see Step 10)
+templates/       The web UI (comparison dashboard + live Q&A page)
+tests/           Script-style tests for every component above
+presentation/    A slide-deck summary of this whole project
+experiments/     Superseded/abandoned code, kept for reference rather than
+                 deleted (see experiments/README.md for why each file is there)
+app.py           The FastAPI web app (routes: "/" comparison UI, "/ask" live Q&A)
+config.py        Every tunable constant, each with a comment explaining why
+                 that value was chosen
+```
 
 ---
 
@@ -719,83 +800,6 @@ windows and merges them into one excerpt before returning (see
 `retrieval/context_expander.py`). Re-running the same question afterward:
 5 chunks in, **4** out, `overlapping_groups_merged: 1` — logged directly in
 the trace, so the fix is verifiable from the same log that caught the bug.
-
----
-
-## Architecture Diagram
-
-```mermaid
-flowchart TD
-    subgraph ingest["1 · INGESTION (one-time, per document)"]
-        A[PDF file] --> B["Loader<br/>(pypdf)"]
-        B --> C["Cleaners<br/>(strip headers/footers)"]
-        C --> D["Chunker<br/>(700 chars, 120 overlap)"]
-        D --> E["Embedder<br/>(BAAI/bge-small-en-v1.5)"]
-        E --> F[("Vector Store<br/>ChromaDB")]
-    end
-
-    subgraph retrieve["2 · RETRIEVAL (every question)"]
-        G[User question] --> H["Vector search<br/>(meaning-based)"]
-        G --> I["BM25 search<br/>(keyword-based)"]
-        F -.-> H
-        H --> J["Fuse rankings<br/>(RRF)"]
-        I --> J
-        J --> K["Cross-encoder<br/>reranking (top 15 → top 5)"]
-        K --> L["Context expansion<br/>(merge ±1 neighbor chunk)"]
-    end
-
-    subgraph generate["3 · GENERATION"]
-        L --> M["Build prompt<br/>(numbered, page-tagged excerpts)"]
-        M --> N["GPT-4o-mini<br/>(temperature 0)"]
-        N --> O["Answer with [p.N]<br/>citations"]
-    end
-
-    subgraph evaluate["4 · EVALUATION (offline, every pipeline change)"]
-        P["30 golden-dataset<br/>questions"] --> Q["Classical metrics<br/>Recall@K · MRR · NDCG"]
-        P --> R["RAGAS metrics<br/>(LLM-judged)"]
-    end
-
-    subgraph trace["5 · TRACING (every live question)"]
-        S["Every stage above<br/>records its candidates/scores"] --> T[("logs/retrieval_traces.jsonl<br/>one JSON line per question")]
-    end
-
-    H -.-> S
-    I -.-> S
-    J -.-> S
-    K -.-> S
-    L -.-> S
-    N -.-> S
-```
-
----
-
-## Project Layout
-
-```
-ingestion/       Loading PDFs, cleaning text, building the vector index
-chunking/        Splitting documents into chunks (recursive / semantic)
-embedding/       Wraps the embedding model
-vectorstore/     ChromaDB / FAISS / in-memory storage backends
-retrieval/       Vector search, BM25, hybrid fusion, reranking, context
-                 expansion, and the live /ask pipeline
-llm/             The answer-generation model wrapper
-cleaners/        Header/footer/whitespace cleanup for extracted PDF text
-evaluation/      The 30-question golden dataset, classical + RAGAS scoring,
-                 and the full history of what was tried and measured
-                 (RETRIEVAL_EVALUATION_JOURNAL.md is worth reading in full)
-utils/           Logging setup, and the per-request retrieval tracer
-                 (utils/trace.py — see Step 10) that writes to logs/
-logs/            Per-request trace files (git-ignored, generated locally —
-                 see Step 10)
-templates/       The web UI (comparison dashboard + live Q&A page)
-tests/           Script-style tests for every component above
-presentation/    A slide-deck summary of this whole project
-experiments/     Superseded/abandoned code, kept for reference rather than
-                 deleted (see experiments/README.md for why each file is there)
-app.py           The FastAPI web app (routes: "/" comparison UI, "/ask" live Q&A)
-config.py        Every tunable constant, each with a comment explaining why
-                 that value was chosen
-```
 
 ---
 
