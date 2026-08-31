@@ -39,3 +39,17 @@ dist/
 
 # Gensim pre-trained model cache (~2.6 GB total, auto-downloaded to ~/gensim-data/)
 gensim-data/
+
+#Chromadb database files
+/vectorstore/chroma_data/*
+
+#FAISS index files
+/vectorstore/faiss_data/*
+
+# Per-request retrieval traces (utils/trace.py) - local debug artifact,
+# may contain user question text, not meant to be versioned.
+/logs/
+
+# Local Claude Code tool config (permission allowlist referencing this
+# machine's own paths) - not project content.
+/.claude/
