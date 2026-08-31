@@ -13,6 +13,12 @@ class FakeVectorStore(BaseVectorStore):
     def exists(self, chunk_id: str) -> bool:
         return chunk_id in self.store
 
+    def get_all_documents(self):
+        return [result.document for result in self.store.values()]
+
+    def clear(self) -> None:
+        self.store = {}
+
     def add(self,embeddings: List[EmbeddingResult]) -> VectorStoreResponse:
         successful_stores = 0
         skipped_duplicates = 0

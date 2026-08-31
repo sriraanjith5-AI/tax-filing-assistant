@@ -9,7 +9,6 @@ from langchain_core.documents import Document
 from config import PDF_DIR
 from ingestion.pdfloader import PDFLoader
 from ingestion.cleaner_pipeline import CleanerPipeline
-#from cleaners.dummy_cleaner import DummyCleaner
 from cleaners.header_cleaner import HeaderCleaner
 from cleaners.footer_cleaner import FooterCleaner
 from cleaners.whitespace_cleaner import WhitespaceCleaner
