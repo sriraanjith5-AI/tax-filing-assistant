@@ -1,4 +1,4 @@
-from evaluation.evaluation_dataclass import EvaluationResult
+from experiments.evaluation.evaluation_dataclass import EvaluationResult
 
 
 def _normalize(text: str) -> str:

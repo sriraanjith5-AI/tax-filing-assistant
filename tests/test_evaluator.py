@@ -20,7 +20,7 @@ from utils.logger import logging
 from embedding.embedding_dataclass import EmbeddingConfig
 from vectorstore.fake_vector_store import FakeVectorStore
 from retrieval.default_retriever import build_default_retriever
-from evaluation.rag_evaluator import RAGEvaluator
+from experiments.evaluation.rag_evaluator import RAGEvaluator
 from config import TOP_K
 
 

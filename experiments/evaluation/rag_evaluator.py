@@ -1,4 +1,4 @@
-from evaluation.evaluation_dataclass import EvaluationResult
+from experiments.evaluation.evaluation_dataclass import EvaluationResult
 from evaluation.evidence_matching import (
     extract_evidence_items,
     find_matching_evidence,

@@ -17,7 +17,7 @@ from utils.logger import logging
 from embedding.embedding_dataclass import EmbeddingConfig
 from vectorstore.fake_vector_store import FakeVectorStore
 from retrieval.vector_retriever import VectorRetriever
-from evaluation.rag_evaluator import RAGEvaluator
+from experiments.evaluation.rag_evaluator import RAGEvaluator
 
 
 logger = logging.getLogger(__name__)
