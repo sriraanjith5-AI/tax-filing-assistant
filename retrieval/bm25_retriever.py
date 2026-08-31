@@ -5,6 +5,7 @@ from rank_bm25 import BM25Okapi
 
 from retrieval.base_retriever import BaseRetriever
 from vectorstore.vectorstore_dataclass import SearchResult
+from utils.trace import record_stage, summarize_results
 
 
 class BM25Retriever(BaseRetriever):
@@ -65,10 +66,12 @@ class BM25Retriever(BaseRetriever):
             reverse=True,
         )[:top_k]
 
-        return [
+        results = [
             SearchResult(
                 document=self.documents[index],
                 score=float(scores[index]),
             )
             for index in ranked_indexes
         ]
+        record_stage("bm25_search", top_k=top_k, results=summarize_results(results))
+        return results

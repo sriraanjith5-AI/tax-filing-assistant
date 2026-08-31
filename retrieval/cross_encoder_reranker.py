@@ -5,6 +5,7 @@ from sentence_transformers import CrossEncoder
 
 from retrieval.base_retriever import BaseRetriever
 from vectorstore.vectorstore_dataclass import SearchResult
+from utils.trace import record_stage, page_display
 
 
 class CrossEncoderReranker(BaseRetriever):
@@ -62,6 +63,7 @@ class CrossEncoderReranker(BaseRetriever):
         self.base_retriever = base_retriever
         self.fetch_k = fetch_k
         self.score_threshold = score_threshold
+        self.model_name = model_name
         self.cross_encoder = CrossEncoder(model_name)
 
     def retrieve(
@@ -143,10 +145,35 @@ class CrossEncoderReranker(BaseRetriever):
             # the bar - fall back to the single best candidate.
             reranked = filtered if filtered else reranked[:1]
 
+        kept = reranked[:top_k]
+        kept_ids = {id(candidate) for candidate, _, _ in kept}
+
+        # Every scored candidate, including ones the threshold dropped -
+        # this is what makes "why wasn't chunk X in the answer?" an
+        # answerable question (dropped by the score bar vs. never
+        # reached stage 1 at all are very different failure modes).
+        record_stage(
+            "cross_encoder_rerank",
+            model_name=self.model_name,
+            fetch_k=self.fetch_k,
+            score_threshold=self.score_threshold,
+            candidates=[
+                {
+                    "chunk_id": candidate.document.metadata.get("chunk_id"),
+                    "source": candidate.document.metadata.get("source"),
+                    "page_display": page_display(candidate.document.metadata),
+                    "raw_score": round(float(raw_score), 4),
+                    "probability": round(float(prob), 4) if self.score_threshold is not None else None,
+                    "kept": id(candidate) in kept_ids,
+                }
+                for candidate, raw_score, prob in reranked
+            ],
+        )
+
         return [
             SearchResult(
                 document=candidate.document,
                 score=float(rerank_score),
             )
-            for candidate, rerank_score, _ in reranked[:top_k]
+            for candidate, rerank_score, _ in kept
         ]

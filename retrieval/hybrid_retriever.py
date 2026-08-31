@@ -2,6 +2,7 @@ from typing import List
 
 from retrieval.base_retriever import BaseRetriever
 from vectorstore.vectorstore_dataclass import SearchResult
+from utils.trace import record_stage, summarize_results
 
 
 class HybridRetriever(BaseRetriever):
@@ -85,13 +86,22 @@ class HybridRetriever(BaseRetriever):
         # either way, return at most top_k fused results.
         result_count = min(top_k, candidate_k)
 
-        return [
+        results = [
             SearchResult(
                 document=doc_lookup[key],
                 score=rrf_scores[key],
             )
             for key in ranked_keys[:result_count]
         ]
+        record_stage(
+            "rrf_fusion",
+            rrf_k=self.rrf_k,
+            fetch_k=candidate_k,
+            embedding_candidate_count=len(embedding_results),
+            bm25_candidate_count=len(bm25_results),
+            fused=summarize_results(results),
+        )
+        return results
 
     @staticmethod
     def _doc_key(document):
