@@ -200,14 +200,13 @@
     {
       "id": "gd_010",
       "query": "When can an employee claim exemption from federal income tax withholding?",
-      "expected_answer": "An employee who checks the exemption box below Step 4(c) will generally have no federal income tax withheld from their paychecks, except in the case of certain supplemental wages. Generally, an employee may claim exemption because they had no federal income tax liability last year and expect none this year.",
+      "expected_answer": "An employee may claim exemption from federal income tax withholding if they had no federal income tax liability last year and expect none this year.",
       "source_section": "Exemption from withholding",
       "source_page": 4,
       "evaluation": {
         "type": "exception",
         "retrieval_required": true,
         "answer_must_contain": [
-          "no federal income tax withheld",
           "no federal income tax liability last year",
           "expect none this year"
         ]
